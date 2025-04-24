@@ -1,0 +1,21 @@
+{
+    "frappe": {
+        "resolution": {
+            "commit_hash": null,
+            "branch": null
+        },
+        "required": [],
+        "idx": 1,
+        "version": "16.0.0-dev"
+    },
+    "alumni_management": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "97acd8cff1df14993351d65caf13d1cba01cba3c",
+            "branch": "alumni_management"
+        },
+        "required": [],
+        "idx": 2,
+        "version": "0.0.1"
+    }
+}

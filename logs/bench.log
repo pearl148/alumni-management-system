@@ -1,0 +1,251 @@
+2025-04-16 21:25:42,469 DEBUG cd alumnimgmtsystem && python3 -m venv env
+2025-04-16 21:25:48,922 DEBUG cd alumnimgmtsystem && /home/pearl/alumnimgmtsystem/env/bin/python -m pip install --quiet --upgrade pip
+2025-04-16 21:25:52,189 DEBUG cd alumnimgmtsystem && /home/pearl/alumnimgmtsystem/env/bin/python -m pip install --quiet wheel
+2025-04-16 21:25:54,357 LOG Getting frappe
+2025-04-16 21:25:54,357 DEBUG cd alumnimgmtsystem/apps && git clone https://github.com/frappe/frappe.git  --depth 1 --origin upstream
+2025-04-16 21:26:03,397 LOG Installing frappe
+2025-04-16 21:26:03,397 DEBUG cd /home/pearl/alumnimgmtsystem && /home/pearl/alumnimgmtsystem/env/bin/python -m pip install --quiet --upgrade -e /home/pearl/alumnimgmtsystem/apps/frappe 
+2025-04-16 21:28:22,282 DEBUG cd /home/pearl/alumnimgmtsystem/apps/frappe && yarn install --check-files
+2025-04-16 21:29:09,483 DEBUG cd alumnimgmtsystem && bench build
+2025-04-16 21:29:09,784 INFO /home/pearl/frapproject1/bin/bench build
+2025-04-16 21:29:46,226 LOG setting up backups
+2025-04-16 21:29:46,249 LOG backups were set up
+2025-04-16 21:29:46,250 INFO Bench alumnimgmtsystem initialized
+2025-04-16 21:36:37,878 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-16 21:36:38,355 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-16 21:36:38,358 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-16 21:36:38,358 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-16 21:36:38,493 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-17 09:15:56,127 INFO /home/pearl/frapproject1/bin/bench new-app alumni_management
+2025-04-17 09:15:56,139 LOG creating new app alumni_management
+2025-04-17 09:19:17,732 LOG Installing alumni_management
+2025-04-17 09:19:17,733 DEBUG cd /home/pearl/alumnimgmtsystem && /home/pearl/alumnimgmtsystem/env/bin/python -m pip install --quiet --upgrade -e /home/pearl/alumnimgmtsystem/apps/alumni_management 
+2025-04-17 09:19:20,163 DEBUG bench build --app alumni_management
+2025-04-17 09:19:20,290 INFO /home/pearl/frapproject1/bin/bench build --app alumni_management
+2025-04-17 09:23:41,763 INFO /home/pearl/frapproject1/bin/bench new-site library.localhost
+2025-04-17 09:24:50,386 INFO /home/pearl/frapproject1/bin/bench new-site library.localhost
+2025-04-17 09:25:08,375 INFO /home/pearl/frapproject1/bin/bench new-site alumnimgmt.localhost
+2025-04-17 09:30:30,914 INFO /home/pearl/frapproject1/bin/bench --site alumnimgmt.localhost add-to-hosts
+2025-04-17 09:33:26,285 INFO /home/pearl/frapproject1/bin/bench listsites
+2025-04-17 09:33:36,196 INFO /home/pearl/frapproject1/bin/bench list-sites
+2025-04-17 09:34:39,470 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-17 09:34:39,734 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-17 09:34:39,747 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-17 09:34:39,751 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-17 09:34:39,769 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-17 09:35:30,864 INFO /home/pearl/frapproject1/bin/bench start --site alumnimgmt.localhost
+2025-04-17 09:35:30,871 WARNING /home/pearl/frapproject1/bin/bench start --site alumnimgmt.localhost executed with exit code 2
+2025-04-17 09:36:22,961 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-17 09:36:23,194 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-17 09:36:23,243 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-17 09:36:23,255 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-17 09:36:23,265 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-17 10:03:40,824 INFO /home/pearl/frapproject1/bin/bench --site alumnimgmt.localhost install-app alumni_management
+2025-04-17 10:04:23,807 INFO /home/pearl/frapproject1/bin/bench --site alumnimgmt.localhost list-apps
+2025-04-17 10:11:00,366 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-17 10:11:00,599 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-17 10:11:00,635 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-17 10:11:00,635 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-17 10:11:00,673 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-17 10:14:28,389 INFO /home/pearl/frapproject1/bin/bench new-site alumnimgmt.localhost
+2025-04-17 10:19:22,035 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-17 10:19:22,270 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-17 10:19:22,272 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-17 10:19:22,274 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-17 10:19:22,340 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-17 10:23:15,342 INFO /home/pearl/frapproject1/bin/bench build
+2025-04-17 10:23:52,597 INFO /home/pearl/frapproject1/bin/bench restart
+2025-04-17 10:23:58,936 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-17 10:23:59,190 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-17 10:23:59,192 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-17 10:23:59,200 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-17 10:23:59,210 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-17 10:30:04,103 INFO /home/pearl/frapproject1/bin/bench set-config -g developer_mode true
+2025-04-17 10:30:09,765 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-17 10:30:10,021 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-17 10:30:10,035 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-17 10:30:10,076 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-17 10:30:10,080 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-17 14:28:13,580 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-17 14:28:13,966 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-17 14:28:13,968 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-17 14:28:13,994 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-17 14:28:14,029 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-19 12:00:01,686 INFO /home/pearl/frapproject1/bin/bench --verbose --site all backup
+2025-04-19 12:07:41,541 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-19 12:07:41,906 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-19 12:07:41,922 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-19 12:07:41,948 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-19 12:07:41,949 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-19 14:03:19,184 INFO /home/pearl/frapproject1/bin/bench --site your-site-name install-app website_builder
+2025-04-19 14:03:40,507 INFO /home/pearl/frapproject1/bin/bench --site alumnimgmtsystem install-app website_builder
+2025-04-19 14:04:00,492 INFO /home/pearl/frapproject1/bin/bench --site alumnimgmt.localhost install-app website_builder
+2025-04-19 14:05:54,357 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-19 14:05:54,592 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-19 14:05:54,600 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-19 14:05:54,609 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-19 14:05:54,641 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-19 14:22:10,574 INFO /home/pearl/frapproject1/bin/bench --site alumnimgmt.localhost clear-cache
+2025-04-19 14:22:17,921 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-19 14:22:18,182 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-19 14:22:18,223 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-19 14:22:18,240 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-19 14:22:18,240 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-19 14:25:58,042 INFO /home/pearl/frapproject1/bin/bench -- site alumnimgmt.localhost list-apps
+2025-04-19 14:26:15,233 INFO /home/pearl/frapproject1/bin/bench --site alumnimgmt.localhost list-apps
+2025-04-19 14:27:22,362 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-19 14:27:22,603 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-19 14:27:22,625 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-19 14:27:22,662 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-19 14:27:22,664 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-19 16:38:36,875 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-19 16:38:37,236 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-19 16:38:37,246 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-19 16:38:37,305 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-19 16:38:37,324 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-19 16:40:01,311 INFO /home/pearl/frapproject1/bin/bench migrate
+2025-04-19 16:40:34,352 INFO /home/pearl/frapproject1/bin/bench --site alumnimgmt.localhost migrate
+2025-04-19 16:41:19,164 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-19 16:41:19,513 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-19 16:41:19,513 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-19 16:41:19,515 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-19 16:41:19,576 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-19 16:43:46,287 INFO /home/pearl/frapproject1/bin/bench --site alumnimgmt.localhost migrate
+2025-04-19 16:50:02,241 INFO /home/pearl/frapproject1/bin/bench --site alumnimgmt.localhost migrate
+2025-04-19 16:59:54,989 INFO /home/pearl/frapproject1/bin/bench --site alumnimgmt.localhost migrate
+2025-04-19 17:00:24,148 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-19 17:00:24,506 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-19 17:00:24,544 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-19 17:00:24,545 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-19 17:00:24,598 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-19 17:00:47,331 INFO /home/pearl/frapproject1/bin/bench --site alumnimgmt.localhost migrate
+2025-04-19 17:02:45,343 INFO /home/pearl/frapproject1/bin/bench --site alumnimgmt.localhost migrate
+2025-04-19 17:03:02,059 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-19 17:03:02,412 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-19 17:03:02,417 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-19 17:03:02,483 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-19 17:03:02,502 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-19 17:03:11,515 INFO /home/pearl/frapproject1/bin/bench --site alumnimgmt.localhost migrate
+2025-04-19 17:03:42,994 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-19 17:03:43,474 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-19 17:03:43,513 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-19 17:03:43,580 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-19 17:03:43,583 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-19 17:03:56,882 INFO /home/pearl/frapproject1/bin/bench --site alumnimgmt.localhost migrate
+2025-04-19 17:05:04,014 INFO /home/pearl/frapproject1/bin/bench --site alumnimgmt.localhost migrate
+2025-04-19 17:05:22,603 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-19 17:05:22,957 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-19 17:05:22,971 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-19 17:05:23,030 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-19 17:05:23,048 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-19 17:05:31,051 INFO /home/pearl/frapproject1/bin/bench --site alumnimgmt.localhost migrate
+2025-04-19 17:07:03,378 INFO /home/pearl/frapproject1/bin/bench --site alumnimgmt.localhost migrate
+2025-04-19 17:07:18,515 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-19 17:07:18,865 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-19 17:07:18,879 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-19 17:07:18,944 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-19 17:07:18,959 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-19 17:07:25,568 INFO /home/pearl/frapproject1/bin/bench --site alumnimgmt.localhost migrate
+2025-04-19 17:14:03,160 INFO /home/pearl/frapproject1/bin/bench --site alumnimgmt.localhost migrate
+2025-04-19 17:16:52,137 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-19 17:16:52,499 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-19 17:16:52,501 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-19 17:16:52,562 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-19 17:16:52,581 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-19 17:17:00,902 INFO /home/pearl/frapproject1/bin/bench --site alumnimgmt.localhost migrate
+2025-04-19 19:03:41,233 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-19 19:03:41,472 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-19 19:03:41,478 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-19 19:03:41,501 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-19 19:03:41,506 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-20 13:11:31,357 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-20 13:11:31,758 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-20 13:11:31,760 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-20 13:11:31,762 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-20 13:11:31,821 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-20 13:50:05,988 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-20 13:50:06,326 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-20 13:50:06,340 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-20 13:50:06,348 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-20 13:50:06,435 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-20 16:35:31,667 INFO /home/pearl/frapproject1/bin/bench set-config -g server_script_enabled 1
+2025-04-20 16:35:36,967 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-20 16:35:37,315 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-20 16:35:37,318 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-20 16:35:37,389 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-20 16:35:37,405 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-20 18:00:01,277 INFO /home/pearl/frapproject1/bin/bench --verbose --site all backup
+2025-04-20 19:00:51,465 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-20 19:03:18,939 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-20 19:04:17,618 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-20 19:09:12,503 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-20 19:12:56,499 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-20 19:26:38,983 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-20 19:26:39,495 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-20 19:26:39,499 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-20 19:26:39,513 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-20 19:26:39,564 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-20 19:31:51,449 INFO /home/pearl/frapproject1/bin/bench --site alumnimgmt.localhost console
+2025-04-20 19:33:41,850 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-20 19:33:42,360 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-20 19:33:42,373 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-20 19:33:42,433 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-20 19:33:42,460 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-20 19:38:19,493 INFO /home/pearl/frapproject1/bin/bench --site alumnimgmt.localhost mariadb
+2025-04-20 19:39:21,927 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-20 19:39:22,426 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-20 19:39:22,438 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-20 19:39:22,509 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-20 19:39:22,544 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-20 20:40:59,781 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-20 20:41:00,255 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-20 20:41:00,261 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-20 20:41:00,316 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-20 20:41:00,325 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-20 20:47:37,379 INFO /home/pearl/frapproject1/bin/bench --site alumnimgmt.localhost clear-website-cache
+2025-04-20 20:48:02,310 INFO /home/pearl/frapproject1/bin/bench --site alumnimgmt.localhost clear-cache
+2025-04-20 20:48:24,752 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-20 20:48:25,239 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-20 20:48:25,253 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-20 20:48:25,335 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-20 20:48:25,362 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-20 20:53:38,783 INFO /home/pearl/frapproject1/bin/bench --site alumnimgmt.localhost console
+2025-04-20 20:55:48,817 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-20 20:55:49,346 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-20 20:55:49,347 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-20 20:55:49,392 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-20 20:55:49,414 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-21 18:48:51,027 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-21 18:48:51,431 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-21 18:48:51,431 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-21 18:48:51,440 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-21 18:48:51,454 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-21 21:47:03,006 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-21 21:47:03,512 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-21 21:47:03,520 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-21 21:47:03,548 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-21 21:47:03,595 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-22 17:32:45,013 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-22 17:32:45,523 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-22 17:32:45,532 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-22 17:32:45,588 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-22 17:32:45,649 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-22 18:00:01,381 INFO /home/pearl/frapproject1/bin/bench --verbose --site all backup
+2025-04-22 20:16:16,356 INFO /home/pearl/frapproject1/bin/bench --site alumnimgmt.localhost logs
+2025-04-22 20:16:58,778 INFO /home/pearl/frapproject1/bin/bench --site alumnimgmt.localhost console
+2025-04-22 20:22:22,813 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-22 20:22:23,329 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-22 20:22:23,342 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-22 20:22:23,386 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-22 20:22:23,393 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-23 16:30:51,029 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-23 16:30:51,640 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-23 16:30:51,648 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-23 16:30:51,700 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-04-23 16:30:51,704 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-23 18:00:01,778 INFO /home/pearl/frapproject1/bin/bench --verbose --site all backup
+2025-04-24 14:43:42,978 INFO /home/pearl/frapproject1/bin/bench start
+2025-04-24 14:43:43,377 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-04-24 14:43:43,416 INFO /home/pearl/frapproject1/bin/bench worker
+2025-04-24 14:43:43,440 INFO /home/pearl/frapproject1/bin/bench watch
+2025-04-24 14:43:43,459 INFO /home/pearl/frapproject1/bin/bench schedule

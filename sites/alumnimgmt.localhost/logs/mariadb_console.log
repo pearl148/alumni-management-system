@@ -1,0 +1,6 @@
+_HiStOrY_V2_
+SELECT\040name,\040route\040FROM\040`tabWeb\040Page`\040WHERE\040route\040=\040'login';
+--\040To\040rename\040the\040route\040so\040it\040doesn’t\040override\040the\040default
+UPDATE\040`tabWeb\040Page`\040SET\040route\040=\040'alumni-login'\040WHERE\040route\040=\040'login';
+--\040OR\040to\040delete\040the\040custom\040page\040completely
+--\040DELETE\040FROM\040`tabWeb\040Page`\040WHERE\040route\040=\040'login';
