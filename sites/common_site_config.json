@@ -1,9 +1,13 @@
 {
  "background_workers": 1,
+ "default_site": "alumnimgmt.localhost",
  "developer_mode": true,
  "file_watcher_port": 6787,
  "frappe_user": "pearl",
  "gunicorn_workers": 17,
+ "host_name_map": {
+  "192.168.21.176:8000": "alumnimgmt.localhost"
+ },
  "live_reload": true,
  "rebase_on_pull": false,
  "redis_cache": "redis://127.0.0.1:13000",
