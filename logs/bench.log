@@ -375,3 +375,81 @@
 2025-05-06 18:00:02,310 INFO /home/pearl/frapproject1/bin/bench --verbose --site all backup
 2025-05-07 12:00:01,577 INFO /home/pearl/frapproject1/bin/bench --verbose --site all backup
 2025-05-07 18:00:01,764 INFO /home/pearl/frapproject1/bin/bench --verbose --site all backup
+2025-05-09 18:00:02,121 INFO /home/pearl/frapproject1/bin/bench --verbose --site all backup
+2025-05-10 15:40:34,441 INFO /home/pearl/frapproject1/bin/bench start
+2025-05-10 15:40:34,946 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-05-10 15:40:34,955 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-05-10 15:40:34,974 INFO /home/pearl/frapproject1/bin/bench worker
+2025-05-10 15:40:35,070 INFO /home/pearl/frapproject1/bin/bench watch
+2025-05-11 12:00:02,364 INFO /home/pearl/frapproject1/bin/bench --verbose --site all backup
+2025-05-11 18:00:02,252 INFO /home/pearl/frapproject1/bin/bench --verbose --site all backup
+2025-05-12 18:00:01,994 INFO /home/pearl/frapproject1/bin/bench --verbose --site all backup
+2025-05-13 18:00:02,203 INFO /home/pearl/frapproject1/bin/bench --verbose --site all backup
+2025-05-14 19:52:03,142 INFO /home/pearl/frapproject1/bin/bench start
+2025-05-14 19:52:03,578 INFO /home/pearl/frapproject1/bin/bench worker
+2025-05-14 19:52:03,608 INFO /home/pearl/frapproject1/bin/bench watch
+2025-05-14 19:52:03,615 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-05-14 19:52:03,620 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-05-15 09:54:51,251 INFO /home/pearl/frapproject1/bin/bench start
+2025-05-15 09:54:51,819 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-05-15 09:54:51,857 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-05-15 09:54:51,863 INFO /home/pearl/frapproject1/bin/bench watch
+2025-05-15 09:54:51,930 INFO /home/pearl/frapproject1/bin/bench worker
+2025-05-15 12:00:01,471 INFO /home/pearl/frapproject1/bin/bench --verbose --site all backup
+2025-05-15 17:09:59,064 INFO /home/pearl/frapproject1/bin/bench start
+2025-05-15 17:09:59,670 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-05-15 17:09:59,671 INFO /home/pearl/frapproject1/bin/bench watch
+2025-05-15 17:09:59,686 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-05-15 17:09:59,731 INFO /home/pearl/frapproject1/bin/bench worker
+2025-05-15 18:00:02,024 INFO /home/pearl/frapproject1/bin/bench --verbose --site all backup
+2025-05-16 12:00:02,263 INFO /home/pearl/frapproject1/bin/bench --verbose --site all backup
+2025-05-16 16:11:37,869 INFO /home/pearl/frapproject1/bin/bench start
+2025-05-16 16:11:38,395 INFO /home/pearl/frapproject1/bin/bench worker
+2025-05-16 16:11:38,396 INFO /home/pearl/frapproject1/bin/bench watch
+2025-05-16 16:11:38,406 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-05-16 16:11:38,496 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-05-16 18:00:02,286 INFO /home/pearl/frapproject1/bin/bench --verbose --site all backup
+2025-05-17 16:33:31,569 INFO /home/pearl/frapproject1/bin/bench start
+2025-05-17 16:33:32,135 INFO /home/pearl/frapproject1/bin/bench watch
+2025-05-17 16:33:32,144 INFO /home/pearl/frapproject1/bin/bench worker
+2025-05-17 16:33:32,158 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-05-17 16:33:32,175 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-05-17 20:09:07,826 INFO /home/pearl/frapproject1/bin/bench start
+2025-05-17 20:09:08,093 INFO /home/pearl/frapproject1/bin/bench watch
+2025-05-17 20:09:08,096 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-05-17 20:09:08,110 INFO /home/pearl/frapproject1/bin/bench worker
+2025-05-17 20:09:08,115 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-05-18 09:02:24,703 INFO /home/pearl/frapproject1/bin/bench start
+2025-05-18 09:02:25,301 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-05-18 09:02:25,306 INFO /home/pearl/frapproject1/bin/bench worker
+2025-05-18 09:02:25,359 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-05-18 09:02:25,360 INFO /home/pearl/frapproject1/bin/bench watch
+2025-05-18 14:41:16,687 INFO /home/pearl/frapproject1/bin/bench start
+2025-05-18 14:41:16,933 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-05-18 14:41:16,945 INFO /home/pearl/frapproject1/bin/bench worker
+2025-05-18 14:41:16,982 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-05-18 14:41:16,985 INFO /home/pearl/frapproject1/bin/bench watch
+2025-05-18 14:41:57,875 INFO /home/pearl/frapproject1/bin/bench pip install xlsxwriter
+2025-05-18 14:42:07,701 INFO /home/pearl/frapproject1/bin/bench start
+2025-05-18 14:42:07,938 INFO /home/pearl/frapproject1/bin/bench worker
+2025-05-18 14:42:07,990 INFO /home/pearl/frapproject1/bin/bench watch
+2025-05-18 14:42:07,997 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-05-18 14:42:08,002 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-05-18 18:00:01,684 INFO /home/pearl/frapproject1/bin/bench --verbose --site all backup
+2025-05-18 22:14:30,417 INFO /home/pearl/frapproject1/bin/bench start
+2025-05-18 22:14:30,939 INFO /home/pearl/frapproject1/bin/bench watch
+2025-05-18 22:14:30,939 INFO /home/pearl/frapproject1/bin/bench worker
+2025-05-18 22:14:30,949 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-05-18 22:14:31,018 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-05-19 07:43:08,787 INFO /home/pearl/frapproject1/bin/bench start
+2025-05-19 07:43:09,384 INFO /home/pearl/frapproject1/bin/bench worker
+2025-05-19 07:43:09,391 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-05-19 07:43:09,411 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-05-19 07:43:09,500 INFO /home/pearl/frapproject1/bin/bench watch
+2025-05-19 12:00:01,939 INFO /home/pearl/frapproject1/bin/bench --verbose --site all backup
+2025-05-19 13:05:09,775 INFO /home/pearl/frapproject1/bin/bench start
+2025-05-19 13:05:10,354 INFO /home/pearl/frapproject1/bin/bench serve --port 8000
+2025-05-19 13:05:10,391 INFO /home/pearl/frapproject1/bin/bench schedule
+2025-05-19 13:05:10,399 INFO /home/pearl/frapproject1/bin/bench watch
+2025-05-19 13:05:10,407 INFO /home/pearl/frapproject1/bin/bench worker
+2025-05-20 12:00:01,817 INFO /home/pearl/frapproject1/bin/bench --verbose --site all backup

@@ -4513,3 +4513,2583 @@ Traceback with variables (most recent call last):
       errval = "Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
       errorclass = <class 'pymysql.err.OperationalError'>
 pymysql.err.OperationalError: (1045, "Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)")
+set -o pipefail; /usr/bin/mariadb-dump --user=_3459fc20e3de2b0c --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _3459fc20e3de2b0c | /usr/bin/gzip >> ./alumnimgmt.localhost/private/backups/20250509_180003-alumnimgmt_localhost-database.sql.gz
+
+Backup Summary for alumnimgmt.localhost at 2025-05-09 18:00:03.796356
+Config  : /home/pearl/alumnimgmtsystem/sites/alumnimgmt.localhost/private/backups/20250509_180003-alumnimgmt_localhost-site_config_backup.json 173.0B
+Database: /home/pearl/alumnimgmtsystem/sites/alumnimgmt.localhost/private/backups/20250509_180003-alumnimgmt_localhost-database.sql.gz 534.4KiB
+Backup for Site alumnimgmt.localhost has been successfully completed
+Backup failed for Site library.localhost. Database or site_config.json may be corrupted
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 865, in backup
+    odb = scheduled_backup(
+      context = CliCtxObj(sites=['alumnimgmt.localhost', 'library.localhost'], force=False, profile=False, verbose=True)
+      with_files = False
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_backup_conf = False
+      verbose = True
+      compress = False
+      include = ''
+      exclude = ''
+      old_backup_metadata = False
+      scheduled_backup = <function scheduled_backup at 0x75b552347880>
+      exit_code = 0
+      rollback_callback = None
+      site = 'library.localhost'
+      odb = <frappe.utils.backups.BackupGenerator object at 0x75b5526aaa20>
+  File "apps/frappe/frappe/utils/backups.py", line 589, in scheduled_backup
+    return new_backup(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x75b55172d4b0>
+  File "apps/frappe/frappe/utils/backups.py", line 626, in new_backup
+    odb = BackupGenerator(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x75b55172d4b0>
+  File "apps/frappe/frappe/utils/backups.py", line 89, in __init__
+    self.setup_backup_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x75b55172d580>
+      db_name = '_9a54aa6450761df8'
+      user = '_9a54aa6450761df8'
+      password = ********
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      db_socket = None
+      db_host = '127.0.0.1'
+      db_port = 3306
+      db_type = 'mariadb'
+      backup_path_conf = None
+      ignore_conf = False
+      compress_files = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x75b55172d4b0>
+      site = 'library.localhost'
+  File "apps/frappe/frappe/utils/backups.py", line 126, in setup_backup_tables
+    self._set_existing_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x75b55172d580>
+  File "apps/frappe/frappe/utils/backups.py", line 122, in _set_existing_tables
+    self._existing_tables = frappe.db.get_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x75b55172d580>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 485, in get_tables
+    .run(pluck=True)
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x75b551407d70>
+      cached = True
+      to_query = True
+      tables = None
+      information_schema = <pypika.queries.Schema object at 0x75b5517c42c0>
+  File "apps/frappe/frappe/query_builder/utils.py", line 80, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+      query = 'SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`=%(param1)s'
+      args = ()
+      kwargs = {'pluck': True}
+      child_queries = []
+      params = {'param1': '_9a54aa6450761df8'}
+  File "apps/frappe/frappe/database/database.py", line 237, in sql
+    self.connect()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x75b551407d70>
+      query = 'SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`=%(param1)s'
+      values = {'param1': '_9a54aa6450761df8'}
+      as_dict = 0
+      as_list = 0
+      debug = False
+      ignore_ddl = 0
+      auto_commit = 0
+      update = None
+      explain = False
+      run = True
+      pluck = True
+      as_iterator = False
+      query_type = 'select'
+  File "apps/frappe/frappe/database/database.py", line 135, in connect
+    self.get_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x75b551407d70>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 105, in get_connection
+    conn = self._get_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x75b551407d70>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 111, in _get_connection
+    return self.create_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x75b551407d70>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 114, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x75b551407d70>
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+      self = <pymysql.connections.Connection object at 0x75b553dbf800>
+      user = '_9a54aa6450761df8'
+      password = ********
+      host = '127.0.0.1'
+      database = '_9a54aa6450761df8'
+      unix_socket = None
+      port = 3306
+      charset = 'utf8mb4'
+      collation = 'utf8mb4_unicode_ci'
+      sql_mode = None
+      read_default_file = None
+      conv = {<class 'bool'>: <function escape_bool at 0x75b552209120>, <class 'int'>: <function escape_int at 0x75b5522091c0>, <class 'float'>: <function escape_float at 0x75b552209260>, <class 'str'>: <function escape_str at 0x75b5522094e0>, <class 'bytes'>: <function escape_bytes at 0x75b552209440>, <class 'tuple'>: <function escape_sequence at 0x75b552208fe0>, <class 'list'>: <function escape_sequence at 0x75b552208fe0>, <class 'set'>: <function escape_sequence at 0x75b552208fe0>, <class 'frozenset'>: <function escape_sequence at 0x75b552208fe0>, <class 'dict'>: <function escape_dict at 0x75b552208f40>, <class 'NoneType'>: <function escape_None at 0x75b552209580>, <class 'datetime.date'>: <function escape_date at 0x75b552209800>, <class 'datetime.datetime'>: <function escape_datetime at 0x75b552209760>, <class 'datetime.timedelta'>: <function escape_timedelta at 0x75b552209620>, <class 'datetime.time'>: <function escape_time at 0x75b5522096c0>, <class 'time.struct_time'>: <function escape_struc...
+      use_unicode = True
+      client_flag = 3842573
+      cursorclass = <class 'pymysql.cursors.Cursor'>
+      init_command = None
+      connect_timeout = 10
+      read_default_group = None
+      autocommit = False
+      local_infile = False
+      max_allowed_packet = 16777216
+      defer_connect = False
+      auth_plugin_map = None
+      read_timeout = None
+      write_timeout = None
+      bind_address = None
+      binary_prefix = False
+      program_name = None
+      server_public_key = ********
+      ssl = None
+      ssl_ca = None
+      ssl_cert = None
+      ssl_disabled = None
+      ssl_key = ********
+      ssl_key_password = ********
+      ssl_verify_cert = None
+      ssl_verify_identity = None
+      compress = None
+      named_pipe = None
+      passwd = ********
+      db = None
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+      self = <pymysql.connections.Connection object at 0x75b553dbf800>
+      sock = <socket.socket [closed] fd=-1, family=2, type=1, proto=6>
+      kwargs = {}
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 957, in _request_authentication
+    auth_packet = self._read_packet()
+      self = <pymysql.connections.Connection object at 0x75b553dbf800>
+      charset_id = 45
+      data_init = b'\r\xa2:\x00\xff\xff\xff\x00-\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+      data = b'\r\xa2:\x00\xff\xff\xff\x00-\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00_9a54aa6450761df8\x00\x146\x15\xf6\x17\xfaN\xaf\xb6\x90\x87\x9e8\xe3i\xe7jE\x8e\x9fi_9a54aa6450761df8\x00mysql_native_password\x005\x0c_client_name\x07pymysql\x0f_client_version\x051.1.1\x04_pid\x046985'
+      authresp = b'6\x15\xf6\x17\xfaN\xaf\xb6\x90\x87\x9e8\xe3i\xe7jE\x8e\x9fi'
+      plugin_name = b'mysql_native_password'
+      connect_attrs = b'\x0c_client_name\x07pymysql\x0f_client_version\x051.1.1\x04_pid\x046985'
+      k = b'_pid'
+      v = b'6985'
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+      self = <pymysql.connections.Connection object at 0x75b553dbf800>
+      packet_type = <class 'pymysql.protocol.MysqlPacket'>
+      buff = bytearray(b"\xff\x15\x04#28000Access denied for user \'_9a54aa6450761df8\'@\'localhost\' (using password: YES)")
+      packet_header = b'U\x00\x00\x02'
+      btrl = 85
+      btrh = 0
+      packet_number = 2
+      bytes_to_read = 85
+      recv_data = b"\xff\x15\x04#28000Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      packet = <pymysql.protocol.MysqlPacket object at 0x75b550942a70>
+  File "env/lib/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+      self = <pymysql.protocol.MysqlPacket object at 0x75b550942a70>
+      errno = 1045
+  File "env/lib/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+      data = b"\xff\x15\x04#28000Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      errno = 1045
+      errval = "Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      errorclass = <class 'pymysql.err.OperationalError'>
+pymysql.err.OperationalError: (1045, "Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)")
+set -o pipefail; /usr/bin/mariadb-dump --user=_3459fc20e3de2b0c --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _3459fc20e3de2b0c | /usr/bin/gzip >> ./alumnimgmt.localhost/private/backups/20250511_120004-alumnimgmt_localhost-database.sql.gz
+
+Backup Summary for alumnimgmt.localhost at 2025-05-11 12:00:04.976993
+Config  : /home/pearl/alumnimgmtsystem/sites/alumnimgmt.localhost/private/backups/20250511_120004-alumnimgmt_localhost-site_config_backup.json 173.0B
+Database: /home/pearl/alumnimgmtsystem/sites/alumnimgmt.localhost/private/backups/20250511_120004-alumnimgmt_localhost-database.sql.gz 529.3KiB
+Backup for Site alumnimgmt.localhost has been successfully completed
+Backup failed for Site library.localhost. Database or site_config.json may be corrupted
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 865, in backup
+    odb = scheduled_backup(
+      context = CliCtxObj(sites=['alumnimgmt.localhost', 'library.localhost'], force=False, profile=False, verbose=True)
+      with_files = False
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_backup_conf = False
+      verbose = True
+      compress = False
+      include = ''
+      exclude = ''
+      old_backup_metadata = False
+      scheduled_backup = <function scheduled_backup at 0x79cbc5c4f880>
+      exit_code = 0
+      rollback_callback = None
+      site = 'library.localhost'
+      odb = <frappe.utils.backups.BackupGenerator object at 0x79cbc500fbf0>
+  File "apps/frappe/frappe/utils/backups.py", line 589, in scheduled_backup
+    return new_backup(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x79cbc4edb430>
+  File "apps/frappe/frappe/utils/backups.py", line 626, in new_backup
+    odb = BackupGenerator(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x79cbc4edb430>
+  File "apps/frappe/frappe/utils/backups.py", line 89, in __init__
+    self.setup_backup_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x79cbc4edbc50>
+      db_name = '_9a54aa6450761df8'
+      user = '_9a54aa6450761df8'
+      password = ********
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      db_socket = None
+      db_host = '127.0.0.1'
+      db_port = 3306
+      db_type = 'mariadb'
+      backup_path_conf = None
+      ignore_conf = False
+      compress_files = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x79cbc4edb430>
+      site = 'library.localhost'
+  File "apps/frappe/frappe/utils/backups.py", line 126, in setup_backup_tables
+    self._set_existing_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x79cbc4edbc50>
+  File "apps/frappe/frappe/utils/backups.py", line 122, in _set_existing_tables
+    self._existing_tables = frappe.db.get_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x79cbc4edbc50>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 485, in get_tables
+    .run(pluck=True)
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x79cbc491ddc0>
+      cached = True
+      to_query = True
+      tables = None
+      information_schema = <pypika.queries.Schema object at 0x79cbc4edbce0>
+  File "apps/frappe/frappe/query_builder/utils.py", line 80, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+      query = 'SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`=%(param1)s'
+      args = ()
+      kwargs = {'pluck': True}
+      child_queries = []
+      params = {'param1': '_9a54aa6450761df8'}
+  File "apps/frappe/frappe/database/database.py", line 237, in sql
+    self.connect()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x79cbc491ddc0>
+      query = 'SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`=%(param1)s'
+      values = {'param1': '_9a54aa6450761df8'}
+      as_dict = 0
+      as_list = 0
+      debug = False
+      ignore_ddl = 0
+      auto_commit = 0
+      update = None
+      explain = False
+      run = True
+      pluck = True
+      as_iterator = False
+      query_type = 'select'
+  File "apps/frappe/frappe/database/database.py", line 135, in connect
+    self.get_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x79cbc491ddc0>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 105, in get_connection
+    conn = self._get_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x79cbc491ddc0>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 111, in _get_connection
+    return self.create_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x79cbc491ddc0>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 114, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x79cbc491ddc0>
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+      self = <pymysql.connections.Connection object at 0x79cbc4edbc20>
+      user = '_9a54aa6450761df8'
+      password = ********
+      host = '127.0.0.1'
+      database = '_9a54aa6450761df8'
+      unix_socket = None
+      port = 3306
+      charset = 'utf8mb4'
+      collation = 'utf8mb4_unicode_ci'
+      sql_mode = None
+      read_default_file = None
+      conv = {<class 'bool'>: <function escape_bool at 0x79cbc5169120>, <class 'int'>: <function escape_int at 0x79cbc51691c0>, <class 'float'>: <function escape_float at 0x79cbc5169260>, <class 'str'>: <function escape_str at 0x79cbc51694e0>, <class 'bytes'>: <function escape_bytes at 0x79cbc5169440>, <class 'tuple'>: <function escape_sequence at 0x79cbc5168fe0>, <class 'list'>: <function escape_sequence at 0x79cbc5168fe0>, <class 'set'>: <function escape_sequence at 0x79cbc5168fe0>, <class 'frozenset'>: <function escape_sequence at 0x79cbc5168fe0>, <class 'dict'>: <function escape_dict at 0x79cbc5168f40>, <class 'NoneType'>: <function escape_None at 0x79cbc5169580>, <class 'datetime.date'>: <function escape_date at 0x79cbc5169800>, <class 'datetime.datetime'>: <function escape_datetime at 0x79cbc5169760>, <class 'datetime.timedelta'>: <function escape_timedelta at 0x79cbc5169620>, <class 'datetime.time'>: <function escape_time at 0x79cbc51696c0>, <class 'time.struct_time'>: <function escape_struc...
+      use_unicode = True
+      client_flag = 3842573
+      cursorclass = <class 'pymysql.cursors.Cursor'>
+      init_command = None
+      connect_timeout = 10
+      read_default_group = None
+      autocommit = False
+      local_infile = False
+      max_allowed_packet = 16777216
+      defer_connect = False
+      auth_plugin_map = None
+      read_timeout = None
+      write_timeout = None
+      bind_address = None
+      binary_prefix = False
+      program_name = None
+      server_public_key = ********
+      ssl = None
+      ssl_ca = None
+      ssl_cert = None
+      ssl_disabled = None
+      ssl_key = ********
+      ssl_key_password = ********
+      ssl_verify_cert = None
+      ssl_verify_identity = None
+      compress = None
+      named_pipe = None
+      passwd = ********
+      db = None
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+      self = <pymysql.connections.Connection object at 0x79cbc4edbc20>
+      sock = <socket.socket [closed] fd=-1, family=2, type=1, proto=6>
+      kwargs = {}
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 957, in _request_authentication
+    auth_packet = self._read_packet()
+      self = <pymysql.connections.Connection object at 0x79cbc4edbc20>
+      charset_id = 45
+      data_init = b'\r\xa2:\x00\xff\xff\xff\x00-\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+      data = b'\r\xa2:\x00\xff\xff\xff\x00-\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00_9a54aa6450761df8\x00\x14\x8a\x19g\x07\xb5\xa0J\x0b#\xfe\xadB4\x81L\xd4\x8a\x07X\x03_9a54aa6450761df8\x00mysql_native_password\x005\x0c_client_name\x07pymysql\x0f_client_version\x051.1.1\x04_pid\x045182'
+      authresp = b'\x8a\x19g\x07\xb5\xa0J\x0b#\xfe\xadB4\x81L\xd4\x8a\x07X\x03'
+      plugin_name = b'mysql_native_password'
+      connect_attrs = b'\x0c_client_name\x07pymysql\x0f_client_version\x051.1.1\x04_pid\x045182'
+      k = b'_pid'
+      v = b'5182'
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+      self = <pymysql.connections.Connection object at 0x79cbc4edbc20>
+      packet_type = <class 'pymysql.protocol.MysqlPacket'>
+      buff = bytearray(b"\xff\x15\x04#28000Access denied for user \'_9a54aa6450761df8\'@\'localhost\' (using password: YES)")
+      packet_header = b'U\x00\x00\x02'
+      btrl = 85
+      btrh = 0
+      packet_number = 2
+      bytes_to_read = 85
+      recv_data = b"\xff\x15\x04#28000Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      packet = <pymysql.protocol.MysqlPacket object at 0x79cbc4edbd00>
+  File "env/lib/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+      self = <pymysql.protocol.MysqlPacket object at 0x79cbc4edbd00>
+      errno = 1045
+  File "env/lib/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+      data = b"\xff\x15\x04#28000Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      errno = 1045
+      errval = "Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      errorclass = <class 'pymysql.err.OperationalError'>
+pymysql.err.OperationalError: (1045, "Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)")
+set -o pipefail; /usr/bin/mariadb-dump --user=_3459fc20e3de2b0c --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _3459fc20e3de2b0c | /usr/bin/gzip >> ./alumnimgmt.localhost/private/backups/20250511_180004-alumnimgmt_localhost-database.sql.gz
+
+Backup Summary for alumnimgmt.localhost at 2025-05-11 18:00:05.483756
+Config  : /home/pearl/alumnimgmtsystem/sites/alumnimgmt.localhost/private/backups/20250511_180004-alumnimgmt_localhost-site_config_backup.json 173.0B
+Database: /home/pearl/alumnimgmtsystem/sites/alumnimgmt.localhost/private/backups/20250511_180004-alumnimgmt_localhost-database.sql.gz 529.3KiB
+Backup for Site alumnimgmt.localhost has been successfully completed
+Backup failed for Site library.localhost. Database or site_config.json may be corrupted
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 865, in backup
+    odb = scheduled_backup(
+      context = CliCtxObj(sites=['alumnimgmt.localhost', 'library.localhost'], force=False, profile=False, verbose=True)
+      with_files = False
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_backup_conf = False
+      verbose = True
+      compress = False
+      include = ''
+      exclude = ''
+      old_backup_metadata = False
+      scheduled_backup = <function scheduled_backup at 0x7b2e08e07880>
+      exit_code = 0
+      rollback_callback = None
+      site = 'library.localhost'
+      odb = <frappe.utils.backups.BackupGenerator object at 0x7b2e0815fc50>
+  File "apps/frappe/frappe/utils/backups.py", line 589, in scheduled_backup
+    return new_backup(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x7b2e0802beb0>
+  File "apps/frappe/frappe/utils/backups.py", line 626, in new_backup
+    odb = BackupGenerator(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x7b2e0802beb0>
+  File "apps/frappe/frappe/utils/backups.py", line 89, in __init__
+    self.setup_backup_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x7b2e0802bc80>
+      db_name = '_9a54aa6450761df8'
+      user = '_9a54aa6450761df8'
+      password = ********
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      db_socket = None
+      db_host = '127.0.0.1'
+      db_port = 3306
+      db_type = 'mariadb'
+      backup_path_conf = None
+      ignore_conf = False
+      compress_files = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x7b2e0802beb0>
+      site = 'library.localhost'
+  File "apps/frappe/frappe/utils/backups.py", line 126, in setup_backup_tables
+    self._set_existing_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x7b2e0802bc80>
+  File "apps/frappe/frappe/utils/backups.py", line 122, in _set_existing_tables
+    self._existing_tables = frappe.db.get_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x7b2e0802bc80>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 485, in get_tables
+    .run(pluck=True)
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x7b2e0ace3680>
+      cached = True
+      to_query = True
+      tables = None
+      information_schema = <pypika.queries.Schema object at 0x7b2e0815d3a0>
+  File "apps/frappe/frappe/query_builder/utils.py", line 80, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+      query = 'SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`=%(param1)s'
+      args = ()
+      kwargs = {'pluck': True}
+      child_queries = []
+      params = {'param1': '_9a54aa6450761df8'}
+  File "apps/frappe/frappe/database/database.py", line 237, in sql
+    self.connect()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x7b2e0ace3680>
+      query = 'SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`=%(param1)s'
+      values = {'param1': '_9a54aa6450761df8'}
+      as_dict = 0
+      as_list = 0
+      debug = False
+      ignore_ddl = 0
+      auto_commit = 0
+      update = None
+      explain = False
+      run = True
+      pluck = True
+      as_iterator = False
+      query_type = 'select'
+  File "apps/frappe/frappe/database/database.py", line 135, in connect
+    self.get_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x7b2e0ace3680>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 105, in get_connection
+    conn = self._get_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x7b2e0ace3680>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 111, in _get_connection
+    return self.create_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x7b2e0ace3680>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 114, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x7b2e0ace3680>
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+      self = <pymysql.connections.Connection object at 0x7b2e08cd9010>
+      user = '_9a54aa6450761df8'
+      password = ********
+      host = '127.0.0.1'
+      database = '_9a54aa6450761df8'
+      unix_socket = None
+      port = 3306
+      charset = 'utf8mb4'
+      collation = 'utf8mb4_unicode_ci'
+      sql_mode = None
+      read_default_file = None
+      conv = {<class 'bool'>: <function escape_bool at 0x7b2e08ccd120>, <class 'int'>: <function escape_int at 0x7b2e08ccd1c0>, <class 'float'>: <function escape_float at 0x7b2e08ccd260>, <class 'str'>: <function escape_str at 0x7b2e08ccd4e0>, <class 'bytes'>: <function escape_bytes at 0x7b2e08ccd440>, <class 'tuple'>: <function escape_sequence at 0x7b2e08cccfe0>, <class 'list'>: <function escape_sequence at 0x7b2e08cccfe0>, <class 'set'>: <function escape_sequence at 0x7b2e08cccfe0>, <class 'frozenset'>: <function escape_sequence at 0x7b2e08cccfe0>, <class 'dict'>: <function escape_dict at 0x7b2e08cccf40>, <class 'NoneType'>: <function escape_None at 0x7b2e08ccd580>, <class 'datetime.date'>: <function escape_date at 0x7b2e08ccd800>, <class 'datetime.datetime'>: <function escape_datetime at 0x7b2e08ccd760>, <class 'datetime.timedelta'>: <function escape_timedelta at 0x7b2e08ccd620>, <class 'datetime.time'>: <function escape_time at 0x7b2e08ccd6c0>, <class 'time.struct_time'>: <function escape_struc...
+      use_unicode = True
+      client_flag = 3842573
+      cursorclass = <class 'pymysql.cursors.Cursor'>
+      init_command = None
+      connect_timeout = 10
+      read_default_group = None
+      autocommit = False
+      local_infile = False
+      max_allowed_packet = 16777216
+      defer_connect = False
+      auth_plugin_map = None
+      read_timeout = None
+      write_timeout = None
+      bind_address = None
+      binary_prefix = False
+      program_name = None
+      server_public_key = ********
+      ssl = None
+      ssl_ca = None
+      ssl_cert = None
+      ssl_disabled = None
+      ssl_key = ********
+      ssl_key_password = ********
+      ssl_verify_cert = None
+      ssl_verify_identity = None
+      compress = None
+      named_pipe = None
+      passwd = ********
+      db = None
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+      self = <pymysql.connections.Connection object at 0x7b2e08cd9010>
+      sock = <socket.socket [closed] fd=-1, family=2, type=1, proto=6>
+      kwargs = {}
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 957, in _request_authentication
+    auth_packet = self._read_packet()
+      self = <pymysql.connections.Connection object at 0x7b2e08cd9010>
+      charset_id = 45
+      data_init = b'\r\xa2:\x00\xff\xff\xff\x00-\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+      data = b'\r\xa2:\x00\xff\xff\xff\x00-\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00_9a54aa6450761df8\x00\x14\xd9\xe6\x18\xbd\x8d\xd5K{\x05\xc2\x96\x1eF\xc4n\x96\xea\xf4\xb1Y_9a54aa6450761df8\x00mysql_native_password\x005\x0c_client_name\x07pymysql\x0f_client_version\x051.1.1\x04_pid\x045908'
+      authresp = b'\xd9\xe6\x18\xbd\x8d\xd5K{\x05\xc2\x96\x1eF\xc4n\x96\xea\xf4\xb1Y'
+      plugin_name = b'mysql_native_password'
+      connect_attrs = b'\x0c_client_name\x07pymysql\x0f_client_version\x051.1.1\x04_pid\x045908'
+      k = b'_pid'
+      v = b'5908'
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+      self = <pymysql.connections.Connection object at 0x7b2e08cd9010>
+      packet_type = <class 'pymysql.protocol.MysqlPacket'>
+      buff = bytearray(b"\xff\x15\x04#28000Access denied for user \'_9a54aa6450761df8\'@\'localhost\' (using password: YES)")
+      packet_header = b'U\x00\x00\x02'
+      btrl = 85
+      btrh = 0
+      packet_number = 2
+      bytes_to_read = 85
+      recv_data = b"\xff\x15\x04#28000Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      packet = <pymysql.protocol.MysqlPacket object at 0x7b2e0815d870>
+  File "env/lib/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+      self = <pymysql.protocol.MysqlPacket object at 0x7b2e0815d870>
+      errno = 1045
+  File "env/lib/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+      data = b"\xff\x15\x04#28000Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      errno = 1045
+      errval = "Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      errorclass = <class 'pymysql.err.OperationalError'>
+pymysql.err.OperationalError: (1045, "Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)")
+set -o pipefail; /usr/bin/mariadb-dump --user=_3459fc20e3de2b0c --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _3459fc20e3de2b0c | /usr/bin/gzip >> ./alumnimgmt.localhost/private/backups/20250512_180003-alumnimgmt_localhost-database.sql.gz
+
+Backup Summary for alumnimgmt.localhost at 2025-05-12 18:00:04.798171
+Config  : /home/pearl/alumnimgmtsystem/sites/alumnimgmt.localhost/private/backups/20250512_180003-alumnimgmt_localhost-site_config_backup.json 173.0B
+Database: /home/pearl/alumnimgmtsystem/sites/alumnimgmt.localhost/private/backups/20250512_180003-alumnimgmt_localhost-database.sql.gz 529.3KiB
+Backup for Site alumnimgmt.localhost has been successfully completed
+Backup failed for Site library.localhost. Database or site_config.json may be corrupted
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 865, in backup
+    odb = scheduled_backup(
+      context = CliCtxObj(sites=['alumnimgmt.localhost', 'library.localhost'], force=False, profile=False, verbose=True)
+      with_files = False
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_backup_conf = False
+      verbose = True
+      compress = False
+      include = ''
+      exclude = ''
+      old_backup_metadata = False
+      scheduled_backup = <function scheduled_backup at 0x7addc1a33880>
+      exit_code = 0
+      rollback_callback = None
+      site = 'library.localhost'
+      odb = <frappe.utils.backups.BackupGenerator object at 0x7addc0e1bf80>
+  File "apps/frappe/frappe/utils/backups.py", line 589, in scheduled_backup
+    return new_backup(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x7addc0ee3b20>
+  File "apps/frappe/frappe/utils/backups.py", line 626, in new_backup
+    odb = BackupGenerator(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x7addc0ee3b20>
+  File "apps/frappe/frappe/utils/backups.py", line 89, in __init__
+    self.setup_backup_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x7addc0ee3d40>
+      db_name = '_9a54aa6450761df8'
+      user = '_9a54aa6450761df8'
+      password = ********
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      db_socket = None
+      db_host = '127.0.0.1'
+      db_port = 3306
+      db_type = 'mariadb'
+      backup_path_conf = None
+      ignore_conf = False
+      compress_files = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x7addc0ee3b20>
+      site = 'library.localhost'
+  File "apps/frappe/frappe/utils/backups.py", line 126, in setup_backup_tables
+    self._set_existing_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x7addc0ee3d40>
+  File "apps/frappe/frappe/utils/backups.py", line 122, in _set_existing_tables
+    self._existing_tables = frappe.db.get_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x7addc0ee3d40>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 485, in get_tables
+    .run(pluck=True)
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x7addc0b27d70>
+      cached = True
+      to_query = True
+      tables = None
+      information_schema = <pypika.queries.Schema object at 0x7addc0e19730>
+  File "apps/frappe/frappe/query_builder/utils.py", line 80, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+      query = 'SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`=%(param1)s'
+      args = ()
+      kwargs = {'pluck': True}
+      child_queries = []
+      params = {'param1': '_9a54aa6450761df8'}
+  File "apps/frappe/frappe/database/database.py", line 237, in sql
+    self.connect()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x7addc0b27d70>
+      query = 'SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`=%(param1)s'
+      values = {'param1': '_9a54aa6450761df8'}
+      as_dict = 0
+      as_list = 0
+      debug = False
+      ignore_ddl = 0
+      auto_commit = 0
+      update = None
+      explain = False
+      run = True
+      pluck = True
+      as_iterator = False
+      query_type = 'select'
+  File "apps/frappe/frappe/database/database.py", line 135, in connect
+    self.get_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x7addc0b27d70>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 105, in get_connection
+    conn = self._get_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x7addc0b27d70>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 111, in _get_connection
+    return self.create_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x7addc0b27d70>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 114, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x7addc0b27d70>
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+      self = <pymysql.connections.Connection object at 0x7addc2809b80>
+      user = '_9a54aa6450761df8'
+      password = ********
+      host = '127.0.0.1'
+      database = '_9a54aa6450761df8'
+      unix_socket = None
+      port = 3306
+      charset = 'utf8mb4'
+      collation = 'utf8mb4_unicode_ci'
+      sql_mode = None
+      read_default_file = None
+      conv = {<class 'bool'>: <function escape_bool at 0x7addc0f75120>, <class 'int'>: <function escape_int at 0x7addc0f751c0>, <class 'float'>: <function escape_float at 0x7addc0f75260>, <class 'str'>: <function escape_str at 0x7addc0f754e0>, <class 'bytes'>: <function escape_bytes at 0x7addc0f75440>, <class 'tuple'>: <function escape_sequence at 0x7addc0f74fe0>, <class 'list'>: <function escape_sequence at 0x7addc0f74fe0>, <class 'set'>: <function escape_sequence at 0x7addc0f74fe0>, <class 'frozenset'>: <function escape_sequence at 0x7addc0f74fe0>, <class 'dict'>: <function escape_dict at 0x7addc0f74f40>, <class 'NoneType'>: <function escape_None at 0x7addc0f75580>, <class 'datetime.date'>: <function escape_date at 0x7addc0f75800>, <class 'datetime.datetime'>: <function escape_datetime at 0x7addc0f75760>, <class 'datetime.timedelta'>: <function escape_timedelta at 0x7addc0f75620>, <class 'datetime.time'>: <function escape_time at 0x7addc0f756c0>, <class 'time.struct_time'>: <function escape_struc...
+      use_unicode = True
+      client_flag = 3842573
+      cursorclass = <class 'pymysql.cursors.Cursor'>
+      init_command = None
+      connect_timeout = 10
+      read_default_group = None
+      autocommit = False
+      local_infile = False
+      max_allowed_packet = 16777216
+      defer_connect = False
+      auth_plugin_map = None
+      read_timeout = None
+      write_timeout = None
+      bind_address = None
+      binary_prefix = False
+      program_name = None
+      server_public_key = ********
+      ssl = None
+      ssl_ca = None
+      ssl_cert = None
+      ssl_disabled = None
+      ssl_key = ********
+      ssl_key_password = ********
+      ssl_verify_cert = None
+      ssl_verify_identity = None
+      compress = None
+      named_pipe = None
+      passwd = ********
+      db = None
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+      self = <pymysql.connections.Connection object at 0x7addc2809b80>
+      sock = <socket.socket [closed] fd=-1, family=2, type=1, proto=6>
+      kwargs = {}
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 957, in _request_authentication
+    auth_packet = self._read_packet()
+      self = <pymysql.connections.Connection object at 0x7addc2809b80>
+      charset_id = 45
+      data_init = b'\r\xa2:\x00\xff\xff\xff\x00-\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+      data = b'\r\xa2:\x00\xff\xff\xff\x00-\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00_9a54aa6450761df8\x00\x14\x8d\xcb\x1a\n\xb8\xb6\xfa\xb8\x96\x86]\xaa\xb97/=\xe4\xe5;?_9a54aa6450761df8\x00mysql_native_password\x005\x0c_client_name\x07pymysql\x0f_client_version\x051.1.1\x04_pid\x047380'
+      authresp = b'\x8d\xcb\x1a\n\xb8\xb6\xfa\xb8\x96\x86]\xaa\xb97/=\xe4\xe5;?'
+      plugin_name = b'mysql_native_password'
+      connect_attrs = b'\x0c_client_name\x07pymysql\x0f_client_version\x051.1.1\x04_pid\x047380'
+      k = b'_pid'
+      v = b'7380'
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+      self = <pymysql.connections.Connection object at 0x7addc2809b80>
+      packet_type = <class 'pymysql.protocol.MysqlPacket'>
+      buff = bytearray(b"\xff\x15\x04#28000Access denied for user \'_9a54aa6450761df8\'@\'localhost\' (using password: YES)")
+      packet_header = b'U\x00\x00\x02'
+      btrl = 85
+      btrh = 0
+      packet_number = 2
+      bytes_to_read = 85
+      recv_data = b"\xff\x15\x04#28000Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      packet = <pymysql.protocol.MysqlPacket object at 0x7addc0e4c1f0>
+  File "env/lib/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+      self = <pymysql.protocol.MysqlPacket object at 0x7addc0e4c1f0>
+      errno = 1045
+  File "env/lib/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+      data = b"\xff\x15\x04#28000Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      errno = 1045
+      errval = "Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      errorclass = <class 'pymysql.err.OperationalError'>
+pymysql.err.OperationalError: (1045, "Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)")
+set -o pipefail; /usr/bin/mariadb-dump --user=_3459fc20e3de2b0c --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _3459fc20e3de2b0c | /usr/bin/gzip >> ./alumnimgmt.localhost/private/backups/20250513_180004-alumnimgmt_localhost-database.sql.gz
+
+Backup Summary for alumnimgmt.localhost at 2025-05-13 18:00:05.922684
+Config  : /home/pearl/alumnimgmtsystem/sites/alumnimgmt.localhost/private/backups/20250513_180004-alumnimgmt_localhost-site_config_backup.json 173.0B
+Database: /home/pearl/alumnimgmtsystem/sites/alumnimgmt.localhost/private/backups/20250513_180004-alumnimgmt_localhost-database.sql.gz 529.3KiB
+Backup for Site alumnimgmt.localhost has been successfully completed
+Backup failed for Site library.localhost. Database or site_config.json may be corrupted
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 865, in backup
+    odb = scheduled_backup(
+      context = CliCtxObj(sites=['alumnimgmt.localhost', 'library.localhost'], force=False, profile=False, verbose=True)
+      with_files = False
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_backup_conf = False
+      verbose = True
+      compress = False
+      include = ''
+      exclude = ''
+      old_backup_metadata = False
+      scheduled_backup = <function scheduled_backup at 0x787666b3b880>
+      exit_code = 0
+      rollback_callback = None
+      site = 'library.localhost'
+      odb = <frappe.utils.backups.BackupGenerator object at 0x787665f23fb0>
+  File "apps/frappe/frappe/utils/backups.py", line 589, in scheduled_backup
+    return new_backup(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x787665fe7c10>
+  File "apps/frappe/frappe/utils/backups.py", line 626, in new_backup
+    odb = BackupGenerator(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x787665fe7c10>
+  File "apps/frappe/frappe/utils/backups.py", line 89, in __init__
+    self.setup_backup_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x787665fe7b60>
+      db_name = '_9a54aa6450761df8'
+      user = '_9a54aa6450761df8'
+      password = ********
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      db_socket = None
+      db_host = '127.0.0.1'
+      db_port = 3306
+      db_type = 'mariadb'
+      backup_path_conf = None
+      ignore_conf = False
+      compress_files = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x787665fe7c10>
+      site = 'library.localhost'
+  File "apps/frappe/frappe/utils/backups.py", line 126, in setup_backup_tables
+    self._set_existing_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x787665fe7b60>
+  File "apps/frappe/frappe/utils/backups.py", line 122, in _set_existing_tables
+    self._existing_tables = frappe.db.get_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x787665fe7b60>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 485, in get_tables
+    .run(pluck=True)
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x787666bf3e60>
+      cached = True
+      to_query = True
+      tables = None
+      information_schema = <pypika.queries.Schema object at 0x787665f54260>
+  File "apps/frappe/frappe/query_builder/utils.py", line 80, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+      query = 'SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`=%(param1)s'
+      args = ()
+      kwargs = {'pluck': True}
+      child_queries = []
+      params = {'param1': '_9a54aa6450761df8'}
+  File "apps/frappe/frappe/database/database.py", line 237, in sql
+    self.connect()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x787666bf3e60>
+      query = 'SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`=%(param1)s'
+      values = {'param1': '_9a54aa6450761df8'}
+      as_dict = 0
+      as_list = 0
+      debug = False
+      ignore_ddl = 0
+      auto_commit = 0
+      update = None
+      explain = False
+      run = True
+      pluck = True
+      as_iterator = False
+      query_type = 'select'
+  File "apps/frappe/frappe/database/database.py", line 135, in connect
+    self.get_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x787666bf3e60>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 105, in get_connection
+    conn = self._get_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x787666bf3e60>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 111, in _get_connection
+    return self.create_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x787666bf3e60>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 114, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x787666bf3e60>
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+      self = <pymysql.connections.Connection object at 0x7876679ed730>
+      user = '_9a54aa6450761df8'
+      password = ********
+      host = '127.0.0.1'
+      database = '_9a54aa6450761df8'
+      unix_socket = None
+      port = 3306
+      charset = 'utf8mb4'
+      collation = 'utf8mb4_unicode_ci'
+      sql_mode = None
+      read_default_file = None
+      conv = {<class 'bool'>: <function escape_bool at 0x7876669fd120>, <class 'int'>: <function escape_int at 0x7876669fd1c0>, <class 'float'>: <function escape_float at 0x7876669fd260>, <class 'str'>: <function escape_str at 0x7876669fd4e0>, <class 'bytes'>: <function escape_bytes at 0x7876669fd440>, <class 'tuple'>: <function escape_sequence at 0x7876669fcfe0>, <class 'list'>: <function escape_sequence at 0x7876669fcfe0>, <class 'set'>: <function escape_sequence at 0x7876669fcfe0>, <class 'frozenset'>: <function escape_sequence at 0x7876669fcfe0>, <class 'dict'>: <function escape_dict at 0x7876669fcf40>, <class 'NoneType'>: <function escape_None at 0x7876669fd580>, <class 'datetime.date'>: <function escape_date at 0x7876669fd800>, <class 'datetime.datetime'>: <function escape_datetime at 0x7876669fd760>, <class 'datetime.timedelta'>: <function escape_timedelta at 0x7876669fd620>, <class 'datetime.time'>: <function escape_time at 0x7876669fd6c0>, <class 'time.struct_time'>: <function escape_struc...
+      use_unicode = True
+      client_flag = 3842573
+      cursorclass = <class 'pymysql.cursors.Cursor'>
+      init_command = None
+      connect_timeout = 10
+      read_default_group = None
+      autocommit = False
+      local_infile = False
+      max_allowed_packet = 16777216
+      defer_connect = False
+      auth_plugin_map = None
+      read_timeout = None
+      write_timeout = None
+      bind_address = None
+      binary_prefix = False
+      program_name = None
+      server_public_key = ********
+      ssl = None
+      ssl_ca = None
+      ssl_cert = None
+      ssl_disabled = None
+      ssl_key = ********
+      ssl_key_password = ********
+      ssl_verify_cert = None
+      ssl_verify_identity = None
+      compress = None
+      named_pipe = None
+      passwd = ********
+      db = None
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+      self = <pymysql.connections.Connection object at 0x7876679ed730>
+      sock = <socket.socket [closed] fd=-1, family=2, type=1, proto=6>
+      kwargs = {}
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 957, in _request_authentication
+    auth_packet = self._read_packet()
+      self = <pymysql.connections.Connection object at 0x7876679ed730>
+      charset_id = 45
+      data_init = b'\r\xa2:\x00\xff\xff\xff\x00-\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+      data = b'\r\xa2:\x00\xff\xff\xff\x00-\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00_9a54aa6450761df8\x00\x14\xa7\x0cd\xe8\x00v\xa3\xa1\x8b8\x87\xe1\xae\xa3\xccnC\x07e\xea_9a54aa6450761df8\x00mysql_native_password\x005\x0c_client_name\x07pymysql\x0f_client_version\x051.1.1\x04_pid\x045595'
+      authresp = b'\xa7\x0cd\xe8\x00v\xa3\xa1\x8b8\x87\xe1\xae\xa3\xccnC\x07e\xea'
+      plugin_name = b'mysql_native_password'
+      connect_attrs = b'\x0c_client_name\x07pymysql\x0f_client_version\x051.1.1\x04_pid\x045595'
+      k = b'_pid'
+      v = b'5595'
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+      self = <pymysql.connections.Connection object at 0x7876679ed730>
+      packet_type = <class 'pymysql.protocol.MysqlPacket'>
+      buff = bytearray(b"\xff\x15\x04#28000Access denied for user \'_9a54aa6450761df8\'@\'localhost\' (using password: YES)")
+      packet_header = b'U\x00\x00\x02'
+      btrl = 85
+      btrh = 0
+      packet_number = 2
+      bytes_to_read = 85
+      recv_data = b"\xff\x15\x04#28000Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      packet = <pymysql.protocol.MysqlPacket object at 0x787667bf89a0>
+  File "env/lib/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+      self = <pymysql.protocol.MysqlPacket object at 0x787667bf89a0>
+      errno = 1045
+  File "env/lib/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+      data = b"\xff\x15\x04#28000Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      errno = 1045
+      errval = "Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      errorclass = <class 'pymysql.err.OperationalError'>
+pymysql.err.OperationalError: (1045, "Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)")
+set -o pipefail; /usr/bin/mariadb-dump --user=_3459fc20e3de2b0c --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _3459fc20e3de2b0c | /usr/bin/gzip >> ./alumnimgmt.localhost/private/backups/20250515_120001-alumnimgmt_localhost-database.sql.gz
+
+Backup Summary for alumnimgmt.localhost at 2025-05-15 12:00:02.295308
+Config  : /home/pearl/alumnimgmtsystem/sites/alumnimgmt.localhost/private/backups/20250515_120001-alumnimgmt_localhost-site_config_backup.json 173.0B
+Database: /home/pearl/alumnimgmtsystem/sites/alumnimgmt.localhost/private/backups/20250515_120001-alumnimgmt_localhost-database.sql.gz 534.7KiB
+Backup for Site alumnimgmt.localhost has been successfully completed
+Backup failed for Site library.localhost. Database or site_config.json may be corrupted
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 865, in backup
+    odb = scheduled_backup(
+      context = CliCtxObj(sites=['alumnimgmt.localhost', 'library.localhost'], force=False, profile=False, verbose=True)
+      with_files = False
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_backup_conf = False
+      verbose = True
+      compress = False
+      include = ''
+      exclude = ''
+      old_backup_metadata = False
+      scheduled_backup = <function scheduled_backup at 0x7eae33137880>
+      exit_code = 0
+      rollback_callback = None
+      site = 'library.localhost'
+      odb = <frappe.utils.backups.BackupGenerator object at 0x7eae3374f530>
+  File "apps/frappe/frappe/utils/backups.py", line 589, in scheduled_backup
+    return new_backup(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x7eae3254dae0>
+  File "apps/frappe/frappe/utils/backups.py", line 626, in new_backup
+    odb = BackupGenerator(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x7eae3254dae0>
+  File "apps/frappe/frappe/utils/backups.py", line 89, in __init__
+    self.setup_backup_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x7eae3254e9c0>
+      db_name = '_9a54aa6450761df8'
+      user = '_9a54aa6450761df8'
+      password = ********
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      db_socket = None
+      db_host = '127.0.0.1'
+      db_port = 3306
+      db_type = 'mariadb'
+      backup_path_conf = None
+      ignore_conf = False
+      compress_files = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x7eae3254dae0>
+      site = 'library.localhost'
+  File "apps/frappe/frappe/utils/backups.py", line 126, in setup_backup_tables
+    self._set_existing_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x7eae3254e9c0>
+  File "apps/frappe/frappe/utils/backups.py", line 122, in _set_existing_tables
+    self._existing_tables = frappe.db.get_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x7eae3254e9c0>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 485, in get_tables
+    .run(pluck=True)
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x7eae3345f650>
+      cached = True
+      to_query = True
+      tables = None
+      information_schema = <pypika.queries.Schema object at 0x7eae3254eab0>
+  File "apps/frappe/frappe/query_builder/utils.py", line 80, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+      query = 'SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`=%(param1)s'
+      args = ()
+      kwargs = {'pluck': True}
+      child_queries = []
+      params = {'param1': '_9a54aa6450761df8'}
+  File "apps/frappe/frappe/database/database.py", line 237, in sql
+    self.connect()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x7eae3345f650>
+      query = 'SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`=%(param1)s'
+      values = {'param1': '_9a54aa6450761df8'}
+      as_dict = 0
+      as_list = 0
+      debug = False
+      ignore_ddl = 0
+      auto_commit = 0
+      update = None
+      explain = False
+      run = True
+      pluck = True
+      as_iterator = False
+      query_type = 'select'
+  File "apps/frappe/frappe/database/database.py", line 135, in connect
+    self.get_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x7eae3345f650>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 105, in get_connection
+    conn = self._get_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x7eae3345f650>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 111, in _get_connection
+    return self.create_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x7eae3345f650>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 114, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x7eae3345f650>
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+      self = <pymysql.connections.Connection object at 0x7eae33da3e00>
+      user = '_9a54aa6450761df8'
+      password = ********
+      host = '127.0.0.1'
+      database = '_9a54aa6450761df8'
+      unix_socket = None
+      port = 3306
+      charset = 'utf8mb4'
+      collation = 'utf8mb4_unicode_ci'
+      sql_mode = None
+      read_default_file = None
+      conv = {<class 'bool'>: <function escape_bool at 0x7eae32ff9120>, <class 'int'>: <function escape_int at 0x7eae32ff91c0>, <class 'float'>: <function escape_float at 0x7eae32ff9260>, <class 'str'>: <function escape_str at 0x7eae32ff94e0>, <class 'bytes'>: <function escape_bytes at 0x7eae32ff9440>, <class 'tuple'>: <function escape_sequence at 0x7eae32ff8fe0>, <class 'list'>: <function escape_sequence at 0x7eae32ff8fe0>, <class 'set'>: <function escape_sequence at 0x7eae32ff8fe0>, <class 'frozenset'>: <function escape_sequence at 0x7eae32ff8fe0>, <class 'dict'>: <function escape_dict at 0x7eae32ff8f40>, <class 'NoneType'>: <function escape_None at 0x7eae32ff9580>, <class 'datetime.date'>: <function escape_date at 0x7eae32ff9800>, <class 'datetime.datetime'>: <function escape_datetime at 0x7eae32ff9760>, <class 'datetime.timedelta'>: <function escape_timedelta at 0x7eae32ff9620>, <class 'datetime.time'>: <function escape_time at 0x7eae32ff96c0>, <class 'time.struct_time'>: <function escape_struc...
+      use_unicode = True
+      client_flag = 3842573
+      cursorclass = <class 'pymysql.cursors.Cursor'>
+      init_command = None
+      connect_timeout = 10
+      read_default_group = None
+      autocommit = False
+      local_infile = False
+      max_allowed_packet = 16777216
+      defer_connect = False
+      auth_plugin_map = None
+      read_timeout = None
+      write_timeout = None
+      bind_address = None
+      binary_prefix = False
+      program_name = None
+      server_public_key = ********
+      ssl = None
+      ssl_ca = None
+      ssl_cert = None
+      ssl_disabled = None
+      ssl_key = ********
+      ssl_key_password = ********
+      ssl_verify_cert = None
+      ssl_verify_identity = None
+      compress = None
+      named_pipe = None
+      passwd = ********
+      db = None
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+      self = <pymysql.connections.Connection object at 0x7eae33da3e00>
+      sock = <socket.socket [closed] fd=-1, family=2, type=1, proto=6>
+      kwargs = {}
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 957, in _request_authentication
+    auth_packet = self._read_packet()
+      self = <pymysql.connections.Connection object at 0x7eae33da3e00>
+      charset_id = 45
+      data_init = b'\r\xa2:\x00\xff\xff\xff\x00-\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+      data = b'\r\xa2:\x00\xff\xff\xff\x00-\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00_9a54aa6450761df8\x00\x14@Vv5\x8f\xac\xe8Z\x83\x0e\x8e\xe4SN\xd8\x929/\n\x96_9a54aa6450761df8\x00mysql_native_password\x005\x0c_client_name\x07pymysql\x0f_client_version\x051.1.1\x04_pid\x048619'
+      authresp = b'@Vv5\x8f\xac\xe8Z\x83\x0e\x8e\xe4SN\xd8\x929/\n\x96'
+      plugin_name = b'mysql_native_password'
+      connect_attrs = b'\x0c_client_name\x07pymysql\x0f_client_version\x051.1.1\x04_pid\x048619'
+      k = b'_pid'
+      v = b'8619'
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+      self = <pymysql.connections.Connection object at 0x7eae33da3e00>
+      packet_type = <class 'pymysql.protocol.MysqlPacket'>
+      buff = bytearray(b"\xff\x15\x04#28000Access denied for user \'_9a54aa6450761df8\'@\'localhost\' (using password: YES)")
+      packet_header = b'U\x00\x00\x02'
+      btrl = 85
+      btrh = 0
+      packet_number = 2
+      bytes_to_read = 85
+      recv_data = b"\xff\x15\x04#28000Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      packet = <pymysql.protocol.MysqlPacket object at 0x7eae3254ebf0>
+  File "env/lib/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+      self = <pymysql.protocol.MysqlPacket object at 0x7eae3254ebf0>
+      errno = 1045
+  File "env/lib/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+      data = b"\xff\x15\x04#28000Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      errno = 1045
+      errval = "Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      errorclass = <class 'pymysql.err.OperationalError'>
+pymysql.err.OperationalError: (1045, "Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)")
+set -o pipefail; /usr/bin/mariadb-dump --user=_3459fc20e3de2b0c --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _3459fc20e3de2b0c | /usr/bin/gzip >> ./alumnimgmt.localhost/private/backups/20250515_180002-alumnimgmt_localhost-database.sql.gz
+
+Backup Summary for alumnimgmt.localhost at 2025-05-15 18:00:04.149715
+Config  : /home/pearl/alumnimgmtsystem/sites/alumnimgmt.localhost/private/backups/20250515_180002-alumnimgmt_localhost-site_config_backup.json 173.0B
+Database: /home/pearl/alumnimgmtsystem/sites/alumnimgmt.localhost/private/backups/20250515_180002-alumnimgmt_localhost-database.sql.gz 561.4KiB
+Backup for Site alumnimgmt.localhost has been successfully completed
+Backup failed for Site library.localhost. Database or site_config.json may be corrupted
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 865, in backup
+    odb = scheduled_backup(
+      context = CliCtxObj(sites=['alumnimgmt.localhost', 'library.localhost'], force=False, profile=False, verbose=True)
+      with_files = False
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_backup_conf = False
+      verbose = True
+      compress = False
+      include = ''
+      exclude = ''
+      old_backup_metadata = False
+      scheduled_backup = <function scheduled_backup at 0x7d96c673f880>
+      exit_code = 0
+      rollback_callback = None
+      site = 'library.localhost'
+      odb = <frappe.utils.backups.BackupGenerator object at 0x7d96c5b54b60>
+  File "apps/frappe/frappe/utils/backups.py", line 589, in scheduled_backup
+    return new_backup(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x7d96c5b56830>
+  File "apps/frappe/frappe/utils/backups.py", line 626, in new_backup
+    odb = BackupGenerator(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x7d96c5b56830>
+  File "apps/frappe/frappe/utils/backups.py", line 89, in __init__
+    self.setup_backup_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x7d96c5b55af0>
+      db_name = '_9a54aa6450761df8'
+      user = '_9a54aa6450761df8'
+      password = ********
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      db_socket = None
+      db_host = '127.0.0.1'
+      db_port = 3306
+      db_type = 'mariadb'
+      backup_path_conf = None
+      ignore_conf = False
+      compress_files = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x7d96c5b56830>
+      site = 'library.localhost'
+  File "apps/frappe/frappe/utils/backups.py", line 126, in setup_backup_tables
+    self._set_existing_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x7d96c5b55af0>
+  File "apps/frappe/frappe/utils/backups.py", line 122, in _set_existing_tables
+    self._existing_tables = frappe.db.get_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x7d96c5b55af0>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 485, in get_tables
+    .run(pluck=True)
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x7d96c73bbfe0>
+      cached = True
+      to_query = True
+      tables = None
+      information_schema = <pypika.queries.Schema object at 0x7d96c6643470>
+  File "apps/frappe/frappe/query_builder/utils.py", line 80, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+      query = 'SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`=%(param1)s'
+      args = ()
+      kwargs = {'pluck': True}
+      child_queries = []
+      params = {'param1': '_9a54aa6450761df8'}
+  File "apps/frappe/frappe/database/database.py", line 237, in sql
+    self.connect()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x7d96c73bbfe0>
+      query = 'SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`=%(param1)s'
+      values = {'param1': '_9a54aa6450761df8'}
+      as_dict = 0
+      as_list = 0
+      debug = False
+      ignore_ddl = 0
+      auto_commit = 0
+      update = None
+      explain = False
+      run = True
+      pluck = True
+      as_iterator = False
+      query_type = 'select'
+  File "apps/frappe/frappe/database/database.py", line 135, in connect
+    self.get_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x7d96c73bbfe0>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 105, in get_connection
+    conn = self._get_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x7d96c73bbfe0>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 111, in _get_connection
+    return self.create_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x7d96c73bbfe0>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 114, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x7d96c73bbfe0>
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+      self = <pymysql.connections.Connection object at 0x7d96c66ec230>
+      user = '_9a54aa6450761df8'
+      password = ********
+      host = '127.0.0.1'
+      database = '_9a54aa6450761df8'
+      unix_socket = None
+      port = 3306
+      charset = 'utf8mb4'
+      collation = 'utf8mb4_unicode_ci'
+      sql_mode = None
+      read_default_file = None
+      conv = {<class 'bool'>: <function escape_bool at 0x7d96c6601120>, <class 'int'>: <function escape_int at 0x7d96c66011c0>, <class 'float'>: <function escape_float at 0x7d96c6601260>, <class 'str'>: <function escape_str at 0x7d96c66014e0>, <class 'bytes'>: <function escape_bytes at 0x7d96c6601440>, <class 'tuple'>: <function escape_sequence at 0x7d96c6600fe0>, <class 'list'>: <function escape_sequence at 0x7d96c6600fe0>, <class 'set'>: <function escape_sequence at 0x7d96c6600fe0>, <class 'frozenset'>: <function escape_sequence at 0x7d96c6600fe0>, <class 'dict'>: <function escape_dict at 0x7d96c6600f40>, <class 'NoneType'>: <function escape_None at 0x7d96c6601580>, <class 'datetime.date'>: <function escape_date at 0x7d96c6601800>, <class 'datetime.datetime'>: <function escape_datetime at 0x7d96c6601760>, <class 'datetime.timedelta'>: <function escape_timedelta at 0x7d96c6601620>, <class 'datetime.time'>: <function escape_time at 0x7d96c66016c0>, <class 'time.struct_time'>: <function escape_struc...
+      use_unicode = True
+      client_flag = 3842573
+      cursorclass = <class 'pymysql.cursors.Cursor'>
+      init_command = None
+      connect_timeout = 10
+      read_default_group = None
+      autocommit = False
+      local_infile = False
+      max_allowed_packet = 16777216
+      defer_connect = False
+      auth_plugin_map = None
+      read_timeout = None
+      write_timeout = None
+      bind_address = None
+      binary_prefix = False
+      program_name = None
+      server_public_key = ********
+      ssl = None
+      ssl_ca = None
+      ssl_cert = None
+      ssl_disabled = None
+      ssl_key = ********
+      ssl_key_password = ********
+      ssl_verify_cert = None
+      ssl_verify_identity = None
+      compress = None
+      named_pipe = None
+      passwd = ********
+      db = None
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+      self = <pymysql.connections.Connection object at 0x7d96c66ec230>
+      sock = <socket.socket [closed] fd=-1, family=2, type=1, proto=6>
+      kwargs = {}
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 957, in _request_authentication
+    auth_packet = self._read_packet()
+      self = <pymysql.connections.Connection object at 0x7d96c66ec230>
+      charset_id = 45
+      data_init = b'\r\xa2:\x00\xff\xff\xff\x00-\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+      data = b'\r\xa2:\x00\xff\xff\xff\x00-\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00_9a54aa6450761df8\x00\x14\\eD\xa7\x85kJ\xdb4O\x80\xb9\r\x82\x19\x0fL\x1a\x8c\xf3_9a54aa6450761df8\x00mysql_native_password\x005\x0c_client_name\x07pymysql\x0f_client_version\x051.1.1\x04_pid\x049476'
+      authresp = b'\\eD\xa7\x85kJ\xdb4O\x80\xb9\r\x82\x19\x0fL\x1a\x8c\xf3'
+      plugin_name = b'mysql_native_password'
+      connect_attrs = b'\x0c_client_name\x07pymysql\x0f_client_version\x051.1.1\x04_pid\x049476'
+      k = b'_pid'
+      v = b'9476'
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+      self = <pymysql.connections.Connection object at 0x7d96c66ec230>
+      packet_type = <class 'pymysql.protocol.MysqlPacket'>
+      buff = bytearray(b"\xff\x15\x04#28000Access denied for user \'_9a54aa6450761df8\'@\'localhost\' (using password: YES)")
+      packet_header = b'U\x00\x00\x02'
+      btrl = 85
+      btrh = 0
+      packet_number = 2
+      bytes_to_read = 85
+      recv_data = b"\xff\x15\x04#28000Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      packet = <pymysql.protocol.MysqlPacket object at 0x7d96c5b56ad0>
+  File "env/lib/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+      self = <pymysql.protocol.MysqlPacket object at 0x7d96c5b56ad0>
+      errno = 1045
+  File "env/lib/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+      data = b"\xff\x15\x04#28000Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      errno = 1045
+      errval = "Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      errorclass = <class 'pymysql.err.OperationalError'>
+pymysql.err.OperationalError: (1045, "Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)")
+set -o pipefail; /usr/bin/mariadb-dump --user=_3459fc20e3de2b0c --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _3459fc20e3de2b0c | /usr/bin/gzip >> ./alumnimgmt.localhost/private/backups/20250516_120003-alumnimgmt_localhost-database.sql.gz
+
+Backup Summary for alumnimgmt.localhost at 2025-05-16 12:00:05.633643
+Config  : /home/pearl/alumnimgmtsystem/sites/alumnimgmt.localhost/private/backups/20250516_120003-alumnimgmt_localhost-site_config_backup.json 173.0B
+Database: /home/pearl/alumnimgmtsystem/sites/alumnimgmt.localhost/private/backups/20250516_120003-alumnimgmt_localhost-database.sql.gz 563.1KiB
+Backup for Site alumnimgmt.localhost has been successfully completed
+Backup failed for Site library.localhost. Database or site_config.json may be corrupted
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 865, in backup
+    odb = scheduled_backup(
+      context = CliCtxObj(sites=['alumnimgmt.localhost', 'library.localhost'], force=False, profile=False, verbose=True)
+      with_files = False
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_backup_conf = False
+      verbose = True
+      compress = False
+      include = ''
+      exclude = ''
+      old_backup_metadata = False
+      scheduled_backup = <function scheduled_backup at 0x78838a537880>
+      exit_code = 0
+      rollback_callback = None
+      site = 'library.localhost'
+      odb = <frappe.utils.backups.BackupGenerator object at 0x788389987e60>
+  File "apps/frappe/frappe/utils/backups.py", line 589, in scheduled_backup
+    return new_backup(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x78838974ff70>
+  File "apps/frappe/frappe/utils/backups.py", line 626, in new_backup
+    odb = BackupGenerator(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x78838974ff70>
+  File "apps/frappe/frappe/utils/backups.py", line 89, in __init__
+    self.setup_backup_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x78838974fc50>
+      db_name = '_9a54aa6450761df8'
+      user = '_9a54aa6450761df8'
+      password = ********
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      db_socket = None
+      db_host = '127.0.0.1'
+      db_port = 3306
+      db_type = 'mariadb'
+      backup_path_conf = None
+      ignore_conf = False
+      compress_files = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x78838974ff70>
+      site = 'library.localhost'
+  File "apps/frappe/frappe/utils/backups.py", line 126, in setup_backup_tables
+    self._set_existing_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x78838974fc50>
+  File "apps/frappe/frappe/utils/backups.py", line 122, in _set_existing_tables
+    self._existing_tables = frappe.db.get_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x78838974fc50>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 485, in get_tables
+    .run(pluck=True)
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x78838b9e9d30>
+      cached = True
+      to_query = True
+      tables = None
+      information_schema = <pypika.queries.Schema object at 0x788389253a70>
+  File "apps/frappe/frappe/query_builder/utils.py", line 80, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+      query = 'SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`=%(param1)s'
+      args = ()
+      kwargs = {'pluck': True}
+      child_queries = []
+      params = {'param1': '_9a54aa6450761df8'}
+  File "apps/frappe/frappe/database/database.py", line 237, in sql
+    self.connect()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x78838b9e9d30>
+      query = 'SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`=%(param1)s'
+      values = {'param1': '_9a54aa6450761df8'}
+      as_dict = 0
+      as_list = 0
+      debug = False
+      ignore_ddl = 0
+      auto_commit = 0
+      update = None
+      explain = False
+      run = True
+      pluck = True
+      as_iterator = False
+      query_type = 'select'
+  File "apps/frappe/frappe/database/database.py", line 135, in connect
+    self.get_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x78838b9e9d30>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 105, in get_connection
+    conn = self._get_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x78838b9e9d30>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 111, in _get_connection
+    return self.create_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x78838b9e9d30>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 114, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x78838b9e9d30>
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+      self = <pymysql.connections.Connection object at 0x78838940f740>
+      user = '_9a54aa6450761df8'
+      password = ********
+      host = '127.0.0.1'
+      database = '_9a54aa6450761df8'
+      unix_socket = None
+      port = 3306
+      charset = 'utf8mb4'
+      collation = 'utf8mb4_unicode_ci'
+      sql_mode = None
+      read_default_file = None
+      conv = {<class 'bool'>: <function escape_bool at 0x788389991120>, <class 'int'>: <function escape_int at 0x7883899911c0>, <class 'float'>: <function escape_float at 0x788389991260>, <class 'str'>: <function escape_str at 0x7883899914e0>, <class 'bytes'>: <function escape_bytes at 0x788389991440>, <class 'tuple'>: <function escape_sequence at 0x788389990fe0>, <class 'list'>: <function escape_sequence at 0x788389990fe0>, <class 'set'>: <function escape_sequence at 0x788389990fe0>, <class 'frozenset'>: <function escape_sequence at 0x788389990fe0>, <class 'dict'>: <function escape_dict at 0x788389990f40>, <class 'NoneType'>: <function escape_None at 0x788389991580>, <class 'datetime.date'>: <function escape_date at 0x788389991800>, <class 'datetime.datetime'>: <function escape_datetime at 0x788389991760>, <class 'datetime.timedelta'>: <function escape_timedelta at 0x788389991620>, <class 'datetime.time'>: <function escape_time at 0x7883899916c0>, <class 'time.struct_time'>: <function escape_struc...
+      use_unicode = True
+      client_flag = 3842573
+      cursorclass = <class 'pymysql.cursors.Cursor'>
+      init_command = None
+      connect_timeout = 10
+      read_default_group = None
+      autocommit = False
+      local_infile = False
+      max_allowed_packet = 16777216
+      defer_connect = False
+      auth_plugin_map = None
+      read_timeout = None
+      write_timeout = None
+      bind_address = None
+      binary_prefix = False
+      program_name = None
+      server_public_key = ********
+      ssl = None
+      ssl_ca = None
+      ssl_cert = None
+      ssl_disabled = None
+      ssl_key = ********
+      ssl_key_password = ********
+      ssl_verify_cert = None
+      ssl_verify_identity = None
+      compress = None
+      named_pipe = None
+      passwd = ********
+      db = None
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+      self = <pymysql.connections.Connection object at 0x78838940f740>
+      sock = <socket.socket [closed] fd=-1, family=2, type=1, proto=6>
+      kwargs = {}
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 957, in _request_authentication
+    auth_packet = self._read_packet()
+      self = <pymysql.connections.Connection object at 0x78838940f740>
+      charset_id = 45
+      data_init = b'\r\xa2:\x00\xff\xff\xff\x00-\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+      data = b'\r\xa2:\x00\xff\xff\xff\x00-\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00_9a54aa6450761df8\x00\x14\xe16\xdanV&Y\xde\x81\xce\x1c\x16\t\xd9\x9c\x85\x8a\xbe\xbe<_9a54aa6450761df8\x00mysql_native_password\x005\x0c_client_name\x07pymysql\x0f_client_version\x051.1.1\x04_pid\x048127'
+      authresp = b'\xe16\xdanV&Y\xde\x81\xce\x1c\x16\t\xd9\x9c\x85\x8a\xbe\xbe<'
+      plugin_name = b'mysql_native_password'
+      connect_attrs = b'\x0c_client_name\x07pymysql\x0f_client_version\x051.1.1\x04_pid\x048127'
+      k = b'_pid'
+      v = b'8127'
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+      self = <pymysql.connections.Connection object at 0x78838940f740>
+      packet_type = <class 'pymysql.protocol.MysqlPacket'>
+      buff = bytearray(b"\xff\x15\x04#28000Access denied for user \'_9a54aa6450761df8\'@\'localhost\' (using password: YES)")
+      packet_header = b'U\x00\x00\x02'
+      btrl = 85
+      btrh = 0
+      packet_number = 2
+      bytes_to_read = 85
+      recv_data = b"\xff\x15\x04#28000Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      packet = <pymysql.protocol.MysqlPacket object at 0x788389212320>
+  File "env/lib/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+      self = <pymysql.protocol.MysqlPacket object at 0x788389212320>
+      errno = 1045
+  File "env/lib/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+      data = b"\xff\x15\x04#28000Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      errno = 1045
+      errval = "Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      errorclass = <class 'pymysql.err.OperationalError'>
+pymysql.err.OperationalError: (1045, "Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)")
+set -o pipefail; /usr/bin/mariadb-dump --user=_3459fc20e3de2b0c --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _3459fc20e3de2b0c | /usr/bin/gzip >> ./alumnimgmt.localhost/private/backups/20250516_180003-alumnimgmt_localhost-database.sql.gz
+
+Backup Summary for alumnimgmt.localhost at 2025-05-16 18:00:05.276307
+Config  : /home/pearl/alumnimgmtsystem/sites/alumnimgmt.localhost/private/backups/20250516_180003-alumnimgmt_localhost-site_config_backup.json 173.0B
+Database: /home/pearl/alumnimgmtsystem/sites/alumnimgmt.localhost/private/backups/20250516_180003-alumnimgmt_localhost-database.sql.gz 571.0KiB
+Backup for Site alumnimgmt.localhost has been successfully completed
+Backup failed for Site library.localhost. Database or site_config.json may be corrupted
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 865, in backup
+    odb = scheduled_backup(
+      context = CliCtxObj(sites=['alumnimgmt.localhost', 'library.localhost'], force=False, profile=False, verbose=True)
+      with_files = False
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_backup_conf = False
+      verbose = True
+      compress = False
+      include = ''
+      exclude = ''
+      old_backup_metadata = False
+      scheduled_backup = <function scheduled_backup at 0x7b1382007880>
+      exit_code = 0
+      rollback_callback = None
+      site = 'library.localhost'
+      odb = <frappe.utils.backups.BackupGenerator object at 0x7b138135fc50>
+  File "apps/frappe/frappe/utils/backups.py", line 589, in scheduled_backup
+    return new_backup(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x7b138122bc70>
+  File "apps/frappe/frappe/utils/backups.py", line 626, in new_backup
+    odb = BackupGenerator(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x7b138122bc70>
+  File "apps/frappe/frappe/utils/backups.py", line 89, in __init__
+    self.setup_backup_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x7b138122bef0>
+      db_name = '_9a54aa6450761df8'
+      user = '_9a54aa6450761df8'
+      password = ********
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      db_socket = None
+      db_host = '127.0.0.1'
+      db_port = 3306
+      db_type = 'mariadb'
+      backup_path_conf = None
+      ignore_conf = False
+      compress_files = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x7b138122bc70>
+      site = 'library.localhost'
+  File "apps/frappe/frappe/utils/backups.py", line 126, in setup_backup_tables
+    self._set_existing_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x7b138122bef0>
+  File "apps/frappe/frappe/utils/backups.py", line 122, in _set_existing_tables
+    self._existing_tables = frappe.db.get_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x7b138122bef0>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 485, in get_tables
+    .run(pluck=True)
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x7b1381fb9ac0>
+      cached = True
+      to_query = True
+      tables = None
+      information_schema = <pypika.queries.Schema object at 0x7b138122b8f0>
+  File "apps/frappe/frappe/query_builder/utils.py", line 80, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+      query = 'SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`=%(param1)s'
+      args = ()
+      kwargs = {'pluck': True}
+      child_queries = []
+      params = {'param1': '_9a54aa6450761df8'}
+  File "apps/frappe/frappe/database/database.py", line 237, in sql
+    self.connect()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x7b1381fb9ac0>
+      query = 'SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`=%(param1)s'
+      values = {'param1': '_9a54aa6450761df8'}
+      as_dict = 0
+      as_list = 0
+      debug = False
+      ignore_ddl = 0
+      auto_commit = 0
+      update = None
+      explain = False
+      run = True
+      pluck = True
+      as_iterator = False
+      query_type = 'select'
+  File "apps/frappe/frappe/database/database.py", line 135, in connect
+    self.get_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x7b1381fb9ac0>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 105, in get_connection
+    conn = self._get_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x7b1381fb9ac0>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 111, in _get_connection
+    return self.create_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x7b1381fb9ac0>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 114, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x7b1381fb9ac0>
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+      self = <pymysql.connections.Connection object at 0x7b138122aff0>
+      user = '_9a54aa6450761df8'
+      password = ********
+      host = '127.0.0.1'
+      database = '_9a54aa6450761df8'
+      unix_socket = None
+      port = 3306
+      charset = 'utf8mb4'
+      collation = 'utf8mb4_unicode_ci'
+      sql_mode = None
+      read_default_file = None
+      conv = {<class 'bool'>: <function escape_bool at 0x7b1381e8d120>, <class 'int'>: <function escape_int at 0x7b1381e8d1c0>, <class 'float'>: <function escape_float at 0x7b1381e8d260>, <class 'str'>: <function escape_str at 0x7b1381e8d4e0>, <class 'bytes'>: <function escape_bytes at 0x7b1381e8d440>, <class 'tuple'>: <function escape_sequence at 0x7b1381e8cfe0>, <class 'list'>: <function escape_sequence at 0x7b1381e8cfe0>, <class 'set'>: <function escape_sequence at 0x7b1381e8cfe0>, <class 'frozenset'>: <function escape_sequence at 0x7b1381e8cfe0>, <class 'dict'>: <function escape_dict at 0x7b1381e8cf40>, <class 'NoneType'>: <function escape_None at 0x7b1381e8d580>, <class 'datetime.date'>: <function escape_date at 0x7b1381e8d800>, <class 'datetime.datetime'>: <function escape_datetime at 0x7b1381e8d760>, <class 'datetime.timedelta'>: <function escape_timedelta at 0x7b1381e8d620>, <class 'datetime.time'>: <function escape_time at 0x7b1381e8d6c0>, <class 'time.struct_time'>: <function escape_struc...
+      use_unicode = True
+      client_flag = 3842573
+      cursorclass = <class 'pymysql.cursors.Cursor'>
+      init_command = None
+      connect_timeout = 10
+      read_default_group = None
+      autocommit = False
+      local_infile = False
+      max_allowed_packet = 16777216
+      defer_connect = False
+      auth_plugin_map = None
+      read_timeout = None
+      write_timeout = None
+      bind_address = None
+      binary_prefix = False
+      program_name = None
+      server_public_key = ********
+      ssl = None
+      ssl_ca = None
+      ssl_cert = None
+      ssl_disabled = None
+      ssl_key = ********
+      ssl_key_password = ********
+      ssl_verify_cert = None
+      ssl_verify_identity = None
+      compress = None
+      named_pipe = None
+      passwd = ********
+      db = None
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+      self = <pymysql.connections.Connection object at 0x7b138122aff0>
+      sock = <socket.socket [closed] fd=-1, family=2, type=1, proto=6>
+      kwargs = {}
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 957, in _request_authentication
+    auth_packet = self._read_packet()
+      self = <pymysql.connections.Connection object at 0x7b138122aff0>
+      charset_id = 45
+      data_init = b'\r\xa2:\x00\xff\xff\xff\x00-\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+      data = b'\r\xa2:\x00\xff\xff\xff\x00-\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00_9a54aa6450761df8\x00\x14\x01\xc3S\x99\xd4;\xcf\xe0M\x00\xf9IAg\xea\x94\xae\xceS\xab_9a54aa6450761df8\x00mysql_native_password\x005\x0c_client_name\x07pymysql\x0f_client_version\x051.1.1\x04_pid\x049639'
+      authresp = b'\x01\xc3S\x99\xd4;\xcf\xe0M\x00\xf9IAg\xea\x94\xae\xceS\xab'
+      plugin_name = b'mysql_native_password'
+      connect_attrs = b'\x0c_client_name\x07pymysql\x0f_client_version\x051.1.1\x04_pid\x049639'
+      k = b'_pid'
+      v = b'9639'
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+      self = <pymysql.connections.Connection object at 0x7b138122aff0>
+      packet_type = <class 'pymysql.protocol.MysqlPacket'>
+      buff = bytearray(b"\xff\x15\x04#28000Access denied for user \'_9a54aa6450761df8\'@\'localhost\' (using password: YES)")
+      packet_header = b'U\x00\x00\x02'
+      btrl = 85
+      btrh = 0
+      packet_number = 2
+      bytes_to_read = 85
+      recv_data = b"\xff\x15\x04#28000Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      packet = <pymysql.protocol.MysqlPacket object at 0x7b138122bcd0>
+  File "env/lib/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+      self = <pymysql.protocol.MysqlPacket object at 0x7b138122bcd0>
+      errno = 1045
+  File "env/lib/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+      data = b"\xff\x15\x04#28000Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      errno = 1045
+      errval = "Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      errorclass = <class 'pymysql.err.OperationalError'>
+pymysql.err.OperationalError: (1045, "Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)")
+set -o pipefail; /usr/bin/mariadb-dump --user=_3459fc20e3de2b0c --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _3459fc20e3de2b0c | /usr/bin/gzip >> ./alumnimgmt.localhost/private/backups/20250518_180002-alumnimgmt_localhost-database.sql.gz
+
+Backup Summary for alumnimgmt.localhost at 2025-05-18 18:00:03.833377
+Config  : /home/pearl/alumnimgmtsystem/sites/alumnimgmt.localhost/private/backups/20250518_180002-alumnimgmt_localhost-site_config_backup.json 173.0B
+Database: /home/pearl/alumnimgmtsystem/sites/alumnimgmt.localhost/private/backups/20250518_180002-alumnimgmt_localhost-database.sql.gz 610.2KiB
+Backup for Site alumnimgmt.localhost has been successfully completed
+Backup failed for Site library.localhost. Database or site_config.json may be corrupted
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 865, in backup
+    odb = scheduled_backup(
+      context = CliCtxObj(sites=['alumnimgmt.localhost', 'library.localhost'], force=False, profile=False, verbose=True)
+      with_files = False
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_backup_conf = False
+      verbose = True
+      compress = False
+      include = ''
+      exclude = ''
+      old_backup_metadata = False
+      scheduled_backup = <function scheduled_backup at 0x772499403880>
+      exit_code = 0
+      rollback_callback = None
+      site = 'library.localhost'
+      odb = <frappe.utils.backups.BackupGenerator object at 0x7724994eaa80>
+  File "apps/frappe/frappe/utils/backups.py", line 589, in scheduled_backup
+    return new_backup(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x77249861fd60>
+  File "apps/frappe/frappe/utils/backups.py", line 626, in new_backup
+    odb = BackupGenerator(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x77249861fd60>
+  File "apps/frappe/frappe/utils/backups.py", line 89, in __init__
+    self.setup_backup_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x77249861ffb0>
+      db_name = '_9a54aa6450761df8'
+      user = '_9a54aa6450761df8'
+      password = ********
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      db_socket = None
+      db_host = '127.0.0.1'
+      db_port = 3306
+      db_type = 'mariadb'
+      backup_path_conf = None
+      ignore_conf = False
+      compress_files = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x77249861fd60>
+      site = 'library.localhost'
+  File "apps/frappe/frappe/utils/backups.py", line 126, in setup_backup_tables
+    self._set_existing_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x77249861ffb0>
+  File "apps/frappe/frappe/utils/backups.py", line 122, in _set_existing_tables
+    self._existing_tables = frappe.db.get_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x77249861ffb0>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 485, in get_tables
+    .run(pluck=True)
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x772498699dc0>
+      cached = True
+      to_query = True
+      tables = None
+      information_schema = <pypika.queries.Schema object at 0x77249861fce0>
+  File "apps/frappe/frappe/query_builder/utils.py", line 80, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+      query = 'SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`=%(param1)s'
+      args = ()
+      kwargs = {'pluck': True}
+      child_queries = []
+      params = {'param1': '_9a54aa6450761df8'}
+  File "apps/frappe/frappe/database/database.py", line 237, in sql
+    self.connect()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x772498699dc0>
+      query = 'SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`=%(param1)s'
+      values = {'param1': '_9a54aa6450761df8'}
+      as_dict = 0
+      as_list = 0
+      debug = False
+      ignore_ddl = 0
+      auto_commit = 0
+      update = None
+      explain = False
+      run = True
+      pluck = True
+      as_iterator = False
+      query_type = 'select'
+  File "apps/frappe/frappe/database/database.py", line 135, in connect
+    self.get_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x772498699dc0>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 105, in get_connection
+    conn = self._get_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x772498699dc0>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 111, in _get_connection
+    return self.create_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x772498699dc0>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 114, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x772498699dc0>
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+      self = <pymysql.connections.Connection object at 0x7724991deb70>
+      user = '_9a54aa6450761df8'
+      password = ********
+      host = '127.0.0.1'
+      database = '_9a54aa6450761df8'
+      unix_socket = None
+      port = 3306
+      charset = 'utf8mb4'
+      collation = 'utf8mb4_unicode_ci'
+      sql_mode = None
+      read_default_file = None
+      conv = {<class 'bool'>: <function escape_bool at 0x772499289120>, <class 'int'>: <function escape_int at 0x7724992891c0>, <class 'float'>: <function escape_float at 0x772499289260>, <class 'str'>: <function escape_str at 0x7724992894e0>, <class 'bytes'>: <function escape_bytes at 0x772499289440>, <class 'tuple'>: <function escape_sequence at 0x772499288fe0>, <class 'list'>: <function escape_sequence at 0x772499288fe0>, <class 'set'>: <function escape_sequence at 0x772499288fe0>, <class 'frozenset'>: <function escape_sequence at 0x772499288fe0>, <class 'dict'>: <function escape_dict at 0x772499288f40>, <class 'NoneType'>: <function escape_None at 0x772499289580>, <class 'datetime.date'>: <function escape_date at 0x772499289800>, <class 'datetime.datetime'>: <function escape_datetime at 0x772499289760>, <class 'datetime.timedelta'>: <function escape_timedelta at 0x772499289620>, <class 'datetime.time'>: <function escape_time at 0x7724992896c0>, <class 'time.struct_time'>: <function escape_struc...
+      use_unicode = True
+      client_flag = 3842573
+      cursorclass = <class 'pymysql.cursors.Cursor'>
+      init_command = None
+      connect_timeout = 10
+      read_default_group = None
+      autocommit = False
+      local_infile = False
+      max_allowed_packet = 16777216
+      defer_connect = False
+      auth_plugin_map = None
+      read_timeout = None
+      write_timeout = None
+      bind_address = None
+      binary_prefix = False
+      program_name = None
+      server_public_key = ********
+      ssl = None
+      ssl_ca = None
+      ssl_cert = None
+      ssl_disabled = None
+      ssl_key = ********
+      ssl_key_password = ********
+      ssl_verify_cert = None
+      ssl_verify_identity = None
+      compress = None
+      named_pipe = None
+      passwd = ********
+      db = None
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+      self = <pymysql.connections.Connection object at 0x7724991deb70>
+      sock = <socket.socket [closed] fd=-1, family=2, type=1, proto=6>
+      kwargs = {}
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 957, in _request_authentication
+    auth_packet = self._read_packet()
+      self = <pymysql.connections.Connection object at 0x7724991deb70>
+      charset_id = 45
+      data_init = b'\r\xa2:\x00\xff\xff\xff\x00-\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+      data = b'\r\xa2:\x00\xff\xff\xff\x00-\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00_9a54aa6450761df8\x00\x14\x14V\xa3T!\xec\xdb\x11@\x19($\x87\\\x08\xf8\xf21\xd8\xb6_9a54aa6450761df8\x00mysql_native_password\x006\x0c_client_name\x07pymysql\x0f_client_version\x051.1.1\x04_pid\x0518467'
+      authresp = b'\x14V\xa3T!\xec\xdb\x11@\x19($\x87\\\x08\xf8\xf21\xd8\xb6'
+      plugin_name = b'mysql_native_password'
+      connect_attrs = b'\x0c_client_name\x07pymysql\x0f_client_version\x051.1.1\x04_pid\x0518467'
+      k = b'_pid'
+      v = b'18467'
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+      self = <pymysql.connections.Connection object at 0x7724991deb70>
+      packet_type = <class 'pymysql.protocol.MysqlPacket'>
+      buff = bytearray(b"\xff\x15\x04#28000Access denied for user \'_9a54aa6450761df8\'@\'localhost\' (using password: YES)")
+      packet_header = b'U\x00\x00\x02'
+      btrl = 85
+      btrh = 0
+      packet_number = 2
+      bytes_to_read = 85
+      recv_data = b"\xff\x15\x04#28000Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      packet = <pymysql.protocol.MysqlPacket object at 0x772497f974c0>
+  File "env/lib/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+      self = <pymysql.protocol.MysqlPacket object at 0x772497f974c0>
+      errno = 1045
+  File "env/lib/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+      data = b"\xff\x15\x04#28000Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      errno = 1045
+      errval = "Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      errorclass = <class 'pymysql.err.OperationalError'>
+pymysql.err.OperationalError: (1045, "Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)")
+set -o pipefail; /usr/bin/mariadb-dump --user=_3459fc20e3de2b0c --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _3459fc20e3de2b0c | /usr/bin/gzip >> ./alumnimgmt.localhost/private/backups/20250519_120002-alumnimgmt_localhost-database.sql.gz
+
+Backup Summary for alumnimgmt.localhost at 2025-05-19 12:00:04.062179
+Config  : /home/pearl/alumnimgmtsystem/sites/alumnimgmt.localhost/private/backups/20250519_120002-alumnimgmt_localhost-site_config_backup.json 173.0B
+Database: /home/pearl/alumnimgmtsystem/sites/alumnimgmt.localhost/private/backups/20250519_120002-alumnimgmt_localhost-database.sql.gz 644.6KiB
+Backup for Site alumnimgmt.localhost has been successfully completed
+Backup failed for Site library.localhost. Database or site_config.json may be corrupted
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 865, in backup
+    odb = scheduled_backup(
+      context = CliCtxObj(sites=['alumnimgmt.localhost', 'library.localhost'], force=False, profile=False, verbose=True)
+      with_files = False
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_backup_conf = False
+      verbose = True
+      compress = False
+      include = ''
+      exclude = ''
+      old_backup_metadata = False
+      scheduled_backup = <function scheduled_backup at 0x73546c207880>
+      exit_code = 0
+      rollback_callback = None
+      site = 'library.localhost'
+      odb = <frappe.utils.backups.BackupGenerator object at 0x73546c15aa80>
+  File "apps/frappe/frappe/utils/backups.py", line 589, in scheduled_backup
+    return new_backup(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x73546b58dab0>
+  File "apps/frappe/frappe/utils/backups.py", line 626, in new_backup
+    odb = BackupGenerator(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x73546b58dab0>
+  File "apps/frappe/frappe/utils/backups.py", line 89, in __init__
+    self.setup_backup_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x73546b58e7b0>
+      db_name = '_9a54aa6450761df8'
+      user = '_9a54aa6450761df8'
+      password = ********
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      db_socket = None
+      db_host = '127.0.0.1'
+      db_port = 3306
+      db_type = 'mariadb'
+      backup_path_conf = None
+      ignore_conf = False
+      compress_files = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x73546b58dab0>
+      site = 'library.localhost'
+  File "apps/frappe/frappe/utils/backups.py", line 126, in setup_backup_tables
+    self._set_existing_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x73546b58e7b0>
+  File "apps/frappe/frappe/utils/backups.py", line 122, in _set_existing_tables
+    self._existing_tables = frappe.db.get_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x73546b58e7b0>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 485, in get_tables
+    .run(pluck=True)
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x73546c10d340>
+      cached = True
+      to_query = True
+      tables = None
+      information_schema = <pypika.queries.Schema object at 0x73546b58e8d0>
+  File "apps/frappe/frappe/query_builder/utils.py", line 80, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+      query = 'SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`=%(param1)s'
+      args = ()
+      kwargs = {'pluck': True}
+      child_queries = []
+      params = {'param1': '_9a54aa6450761df8'}
+  File "apps/frappe/frappe/database/database.py", line 237, in sql
+    self.connect()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x73546c10d340>
+      query = 'SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`=%(param1)s'
+      values = {'param1': '_9a54aa6450761df8'}
+      as_dict = 0
+      as_list = 0
+      debug = False
+      ignore_ddl = 0
+      auto_commit = 0
+      update = None
+      explain = False
+      run = True
+      pluck = True
+      as_iterator = False
+      query_type = 'select'
+  File "apps/frappe/frappe/database/database.py", line 135, in connect
+    self.get_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x73546c10d340>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 105, in get_connection
+    conn = self._get_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x73546c10d340>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 111, in _get_connection
+    return self.create_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x73546c10d340>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 114, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x73546c10d340>
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+      self = <pymysql.connections.Connection object at 0x73546c7e3da0>
+      user = '_9a54aa6450761df8'
+      password = ********
+      host = '127.0.0.1'
+      database = '_9a54aa6450761df8'
+      unix_socket = None
+      port = 3306
+      charset = 'utf8mb4'
+      collation = 'utf8mb4_unicode_ci'
+      sql_mode = None
+      read_default_file = None
+      conv = {<class 'bool'>: <function escape_bool at 0x73546c0cd120>, <class 'int'>: <function escape_int at 0x73546c0cd1c0>, <class 'float'>: <function escape_float at 0x73546c0cd260>, <class 'str'>: <function escape_str at 0x73546c0cd4e0>, <class 'bytes'>: <function escape_bytes at 0x73546c0cd440>, <class 'tuple'>: <function escape_sequence at 0x73546c0ccfe0>, <class 'list'>: <function escape_sequence at 0x73546c0ccfe0>, <class 'set'>: <function escape_sequence at 0x73546c0ccfe0>, <class 'frozenset'>: <function escape_sequence at 0x73546c0ccfe0>, <class 'dict'>: <function escape_dict at 0x73546c0ccf40>, <class 'NoneType'>: <function escape_None at 0x73546c0cd580>, <class 'datetime.date'>: <function escape_date at 0x73546c0cd800>, <class 'datetime.datetime'>: <function escape_datetime at 0x73546c0cd760>, <class 'datetime.timedelta'>: <function escape_timedelta at 0x73546c0cd620>, <class 'datetime.time'>: <function escape_time at 0x73546c0cd6c0>, <class 'time.struct_time'>: <function escape_struc...
+      use_unicode = True
+      client_flag = 3842573
+      cursorclass = <class 'pymysql.cursors.Cursor'>
+      init_command = None
+      connect_timeout = 10
+      read_default_group = None
+      autocommit = False
+      local_infile = False
+      max_allowed_packet = 16777216
+      defer_connect = False
+      auth_plugin_map = None
+      read_timeout = None
+      write_timeout = None
+      bind_address = None
+      binary_prefix = False
+      program_name = None
+      server_public_key = ********
+      ssl = None
+      ssl_ca = None
+      ssl_cert = None
+      ssl_disabled = None
+      ssl_key = ********
+      ssl_key_password = ********
+      ssl_verify_cert = None
+      ssl_verify_identity = None
+      compress = None
+      named_pipe = None
+      passwd = ********
+      db = None
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+      self = <pymysql.connections.Connection object at 0x73546c7e3da0>
+      sock = <socket.socket [closed] fd=-1, family=2, type=1, proto=6>
+      kwargs = {}
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 957, in _request_authentication
+    auth_packet = self._read_packet()
+      self = <pymysql.connections.Connection object at 0x73546c7e3da0>
+      charset_id = 45
+      data_init = b'\r\xa2:\x00\xff\xff\xff\x00-\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+      data = b'\r\xa2:\x00\xff\xff\xff\x00-\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00_9a54aa6450761df8\x00\x14\xbf\xf4\x16/\xaf\xe6\xcc{\x0c\xa9\xca\xc0`5\xeb\x8b\xe0\xf2\xb6\xd3_9a54aa6450761df8\x00mysql_native_password\x006\x0c_client_name\x07pymysql\x0f_client_version\x051.1.1\x04_pid\x0511738'
+      authresp = b'\xbf\xf4\x16/\xaf\xe6\xcc{\x0c\xa9\xca\xc0`5\xeb\x8b\xe0\xf2\xb6\xd3'
+      plugin_name = b'mysql_native_password'
+      connect_attrs = b'\x0c_client_name\x07pymysql\x0f_client_version\x051.1.1\x04_pid\x0511738'
+      k = b'_pid'
+      v = b'11738'
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+      self = <pymysql.connections.Connection object at 0x73546c7e3da0>
+      packet_type = <class 'pymysql.protocol.MysqlPacket'>
+      buff = bytearray(b"\xff\x15\x04#28000Access denied for user \'_9a54aa6450761df8\'@\'localhost\' (using password: YES)")
+      packet_header = b'U\x00\x00\x02'
+      btrl = 85
+      btrh = 0
+      packet_number = 2
+      bytes_to_read = 85
+      recv_data = b"\xff\x15\x04#28000Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      packet = <pymysql.protocol.MysqlPacket object at 0x73546b58ead0>
+  File "env/lib/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+      self = <pymysql.protocol.MysqlPacket object at 0x73546b58ead0>
+      errno = 1045
+  File "env/lib/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+      data = b"\xff\x15\x04#28000Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      errno = 1045
+      errval = "Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      errorclass = <class 'pymysql.err.OperationalError'>
+pymysql.err.OperationalError: (1045, "Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)")
+set -o pipefail; /usr/bin/mariadb-dump --user=_3459fc20e3de2b0c --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _3459fc20e3de2b0c | /usr/bin/gzip >> ./alumnimgmt.localhost/private/backups/20250520_120002-alumnimgmt_localhost-database.sql.gz
+
+Backup Summary for alumnimgmt.localhost at 2025-05-20 12:00:03.194748
+Config  : /home/pearl/alumnimgmtsystem/sites/alumnimgmt.localhost/private/backups/20250520_120002-alumnimgmt_localhost-site_config_backup.json 173.0B
+Database: /home/pearl/alumnimgmtsystem/sites/alumnimgmt.localhost/private/backups/20250520_120002-alumnimgmt_localhost-database.sql.gz 645.0KiB
+Backup for Site alumnimgmt.localhost has been successfully completed
+Backup failed for Site library.localhost. Database or site_config.json may be corrupted
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 865, in backup
+    odb = scheduled_backup(
+      context = CliCtxObj(sites=['alumnimgmt.localhost', 'library.localhost'], force=False, profile=False, verbose=True)
+      with_files = False
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_backup_conf = False
+      verbose = True
+      compress = False
+      include = ''
+      exclude = ''
+      old_backup_metadata = False
+      scheduled_backup = <function scheduled_backup at 0x77b139d37880>
+      exit_code = 0
+      rollback_callback = None
+      site = 'library.localhost'
+      odb = <frappe.utils.backups.BackupGenerator object at 0x77b13916fda0>
+  File "apps/frappe/frappe/utils/backups.py", line 589, in scheduled_backup
+    return new_backup(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x77b138f37fd0>
+  File "apps/frappe/frappe/utils/backups.py", line 626, in new_backup
+    odb = BackupGenerator(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x77b138f37fd0>
+  File "apps/frappe/frappe/utils/backups.py", line 89, in __init__
+    self.setup_backup_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x77b138f37bc0>
+      db_name = '_9a54aa6450761df8'
+      user = '_9a54aa6450761df8'
+      password = ********
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      db_socket = None
+      db_host = '127.0.0.1'
+      db_port = 3306
+      db_type = 'mariadb'
+      backup_path_conf = None
+      ignore_conf = False
+      compress_files = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x77b138f37fd0>
+      site = 'library.localhost'
+  File "apps/frappe/frappe/utils/backups.py", line 126, in setup_backup_tables
+    self._set_existing_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x77b138f37bc0>
+  File "apps/frappe/frappe/utils/backups.py", line 122, in _set_existing_tables
+    self._existing_tables = frappe.db.get_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x77b138f37bc0>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 485, in get_tables
+    .run(pluck=True)
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x77b13aa8a780>
+      cached = True
+      to_query = True
+      tables = None
+      information_schema = <pypika.queries.Schema object at 0x77b13ac39460>
+  File "apps/frappe/frappe/query_builder/utils.py", line 80, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+      query = 'SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`=%(param1)s'
+      args = ()
+      kwargs = {'pluck': True}
+      child_queries = []
+      params = {'param1': '_9a54aa6450761df8'}
+  File "apps/frappe/frappe/database/database.py", line 237, in sql
+    self.connect()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x77b13aa8a780>
+      query = 'SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`=%(param1)s'
+      values = {'param1': '_9a54aa6450761df8'}
+      as_dict = 0
+      as_list = 0
+      debug = False
+      ignore_ddl = 0
+      auto_commit = 0
+      update = None
+      explain = False
+      run = True
+      pluck = True
+      as_iterator = False
+      query_type = 'select'
+  File "apps/frappe/frappe/database/database.py", line 135, in connect
+    self.get_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x77b13aa8a780>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 105, in get_connection
+    conn = self._get_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x77b13aa8a780>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 111, in _get_connection
+    return self.create_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x77b13aa8a780>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 114, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x77b13aa8a780>
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+      self = <pymysql.connections.Connection object at 0x77b138e39b80>
+      user = '_9a54aa6450761df8'
+      password = ********
+      host = '127.0.0.1'
+      database = '_9a54aa6450761df8'
+      unix_socket = None
+      port = 3306
+      charset = 'utf8mb4'
+      collation = 'utf8mb4_unicode_ci'
+      sql_mode = None
+      read_default_file = None
+      conv = {<class 'bool'>: <function escape_bool at 0x77b139179120>, <class 'int'>: <function escape_int at 0x77b1391791c0>, <class 'float'>: <function escape_float at 0x77b139179260>, <class 'str'>: <function escape_str at 0x77b1391794e0>, <class 'bytes'>: <function escape_bytes at 0x77b139179440>, <class 'tuple'>: <function escape_sequence at 0x77b139178fe0>, <class 'list'>: <function escape_sequence at 0x77b139178fe0>, <class 'set'>: <function escape_sequence at 0x77b139178fe0>, <class 'frozenset'>: <function escape_sequence at 0x77b139178fe0>, <class 'dict'>: <function escape_dict at 0x77b139178f40>, <class 'NoneType'>: <function escape_None at 0x77b139179580>, <class 'datetime.date'>: <function escape_date at 0x77b139179800>, <class 'datetime.datetime'>: <function escape_datetime at 0x77b139179760>, <class 'datetime.timedelta'>: <function escape_timedelta at 0x77b139179620>, <class 'datetime.time'>: <function escape_time at 0x77b1391796c0>, <class 'time.struct_time'>: <function escape_struc...
+      use_unicode = True
+      client_flag = 3842573
+      cursorclass = <class 'pymysql.cursors.Cursor'>
+      init_command = None
+      connect_timeout = 10
+      read_default_group = None
+      autocommit = False
+      local_infile = False
+      max_allowed_packet = 16777216
+      defer_connect = False
+      auth_plugin_map = None
+      read_timeout = None
+      write_timeout = None
+      bind_address = None
+      binary_prefix = False
+      program_name = None
+      server_public_key = ********
+      ssl = None
+      ssl_ca = None
+      ssl_cert = None
+      ssl_disabled = None
+      ssl_key = ********
+      ssl_key_password = ********
+      ssl_verify_cert = None
+      ssl_verify_identity = None
+      compress = None
+      named_pipe = None
+      passwd = ********
+      db = None
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+      self = <pymysql.connections.Connection object at 0x77b138e39b80>
+      sock = <socket.socket [closed] fd=-1, family=2, type=1, proto=6>
+      kwargs = {}
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 957, in _request_authentication
+    auth_packet = self._read_packet()
+      self = <pymysql.connections.Connection object at 0x77b138e39b80>
+      charset_id = 45
+      data_init = b'\r\xa2:\x00\xff\xff\xff\x00-\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+      data = b'\r\xa2:\x00\xff\xff\xff\x00-\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00_9a54aa6450761df8\x00\x14\xc0Em"gH\xe2\x1d;<\x1d\x92\xfc5]\xfe\xa0Cde_9a54aa6450761df8\x00mysql_native_password\x005\x0c_client_name\x07pymysql\x0f_client_version\x051.1.1\x04_pid\x047418'
+      authresp = b'\xc0Em"gH\xe2\x1d;<\x1d\x92\xfc5]\xfe\xa0Cde'
+      plugin_name = b'mysql_native_password'
+      connect_attrs = b'\x0c_client_name\x07pymysql\x0f_client_version\x051.1.1\x04_pid\x047418'
+      k = b'_pid'
+      v = b'7418'
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+      self = <pymysql.connections.Connection object at 0x77b138e39b80>
+      packet_type = <class 'pymysql.protocol.MysqlPacket'>
+      buff = bytearray(b"\xff\x15\x04#28000Access denied for user \'_9a54aa6450761df8\'@\'localhost\' (using password: YES)")
+      packet_header = b'U\x00\x00\x02'
+      btrl = 85
+      btrh = 0
+      packet_number = 2
+      bytes_to_read = 85
+      recv_data = b"\xff\x15\x04#28000Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      packet = <pymysql.protocol.MysqlPacket object at 0x77b138ba6650>
+  File "env/lib/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+      self = <pymysql.protocol.MysqlPacket object at 0x77b138ba6650>
+      errno = 1045
+  File "env/lib/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+      data = b"\xff\x15\x04#28000Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      errno = 1045
+      errval = "Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)"
+      errorclass = <class 'pymysql.err.OperationalError'>
+pymysql.err.OperationalError: (1045, "Access denied for user '_9a54aa6450761df8'@'localhost' (using password: YES)")

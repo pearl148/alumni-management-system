@@ -75,3 +75,15 @@ ALTER TABLE `tabJob or Internship Registration` MODIFY `name` bigint
 ALTER TABLE `tabalumniProfile` MODIFY `admission_year` int NOT NULL DEFAULT 0, MODIFY `batch_year` int NOT NULL DEFAULT 0, MODIFY `yearsofexperience` int NOT NULL DEFAULT 0
 2025-05-01 19:45:04,227 WARNING database DDL Query made to DB:
 ALTER TABLE `tabJob or Internship Registration` ADD COLUMN `job_name` varchar(140)
+2025-05-10 15:49:57,462 WARNING database DDL Query made to DB:
+ALTER TABLE `tabstudentProfile` MODIFY `prn_no` varchar(140)
+2025-05-14 20:01:57,879 WARNING database DDL Query made to DB:
+ALTER TABLE `tabalumniProfile` ADD COLUMN `prn_no` varchar(16)
+2025-05-14 20:01:57,885 WARNING database DDL Query made to DB:
+ALTER TABLE `tabalumniProfile` MODIFY `admission_year` int NOT NULL DEFAULT 0, MODIFY `batch_year` int NOT NULL DEFAULT 0, MODIFY `yearsofexperience` int NOT NULL DEFAULT 0
+2025-05-15 11:34:31,623 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEventAlRegistration` ADD COLUMN `profile_type` varchar(140), ADD COLUMN `profile_id` varchar(140), ADD COLUMN `status` varchar(140)
+2025-05-15 11:47:08,695 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEventAl` MODIFY `isactive` tinyint NOT NULL DEFAULT 0, MODIFY `registrationrequired` tinyint NOT NULL DEFAULT 0
+2025-05-15 13:17:14,567 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEventAlRegistration` MODIFY `registeredon` date
